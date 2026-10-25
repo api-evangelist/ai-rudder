@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-rudder/main/json-schema/ai-rudder-get-service-cloud-ic-detail-response-schema.json",
+  "title": "GetServiceCloudIcDetailResponse",
+  "x-generated": "2026-10-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/ai-rudder-openapi-generated.yml#/components/schemas/GetServiceCloudIcDetailResponse",
+  "type": "object",
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "task_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "repeat_interval": {
+      "type": "integer"
+    },
+    "repeat_number": {
+      "type": "integer"
+    },
+    "robot_hash": {
+      "type": "string"
+    },
+    "robot_method": {
+      "type": "string"
+    },
+    "sip_line": {
+      "type": "string"
+    },
+    "schedule_start_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schedule_end_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "details": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "callee": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "result_label": {
+            "type": "string"
+          },
+          "intention_description": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "integer"
+          },
+          "hangup_type": {
+            "type": "string"
+          },
+          "ring_type": {
+            "type": "string"
+          },
+          "question_answer": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "question_name": {
+                  "type": "string"
+                },
+                "answer": {
+                  "type": "string"
+                },
+                "answer_text": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "answer_text_slot": {
+                  "type": "string"
+                },
+                "var": {
+                  "type": "string"
+                },
+                "verification_results": {
+                  "type": "string"
+                },
+                "question_content": {
+                  "type": "string"
+                },
+                "question_type": {
+                  "type": "string"
+                },
+                "whether_answer": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "EventLabel": {
+            "type": "object",
+            "properties": {
+              "VerifyPass": {
+                "type": "string"
+              }
+            }
+          },
+          "NerSlots": {
+            "type": "object",
+            "properties": {
+              "PaymentMethod": {
+                "type": "string"
+              },
+              "PaymentTime": {
+                "type": "string"
+              }
+            }
+          },
+          "variables": {
+            "type": "object",
+            "properties": {
+              "creditnumber": {
+                "type": "string"
+              },
+              "var2": {
+                "type": "string"
+              },
+              "birthday": {
+                "type": "string"
+              }
+            }
+          },
+          "robot_hash": {
+            "type": "string"
+          },
+          "call_id": {
+            "type": "string"
+          },
+          "call_times": {
+            "type": "integer"
+          },
+          "call_start_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "call_end_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ring_time": {
+            "type": "integer"
+          },
+          "talk_round": {
+            "type": "integer"
+          },
+          "redail_call": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "call_id": {
+                  "type": "string"
+                },
+                "call_start_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "ring_type": {
+                  "type": "string"
+                },
+                "ring_time": {
+                  "type": "integer"
+                },
+                "hangup_type": {
+                  "type": "string"
+                },
+                "result_label": {
+                  "type": "string"
+                },
+                "callee_number": {
+                  "type": "string"
+                },
+                "caller_number": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "caller_number": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

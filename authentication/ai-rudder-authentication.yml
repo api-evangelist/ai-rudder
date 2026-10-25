@@ -1,0 +1,18 @@
+generated: '2026-10-25'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://api-docs.airudder.com/api-44712004.md
+sources:
+- https://api-docs.airudder.com/api-44712004.md
+- https://api-docs.airudder.com/api-334041765.md
+- https://developer.airudder.com/api-44712004
+- https://developer.airudder.com/api-334041765
+schemes:
+- type: http-bearer
+  name: Bearer
+  evidence: Obtain the token and add it to the request header of other APIs.
+  location: header
+  header: Authorization
+  token_url: https://api.airudder.com/service/cloud/auth
+  how_to_obtain: Contact us to get your APPKey and APPSecret.
+docs: https://api-docs.airudder.com/api-44712004.md

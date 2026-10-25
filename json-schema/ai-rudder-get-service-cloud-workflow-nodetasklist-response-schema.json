@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-rudder/main/json-schema/ai-rudder-get-service-cloud-workflow-nodetasklist-response-schema.json",
+  "title": "GetServiceCloudWorkflowNodetasklistResponse",
+  "x-generated": "2026-10-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/ai-rudder-openapi-generated.yml#/components/schemas/GetServiceCloudWorkflowNodetasklistResponse",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "lists": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nodetask_id": {
+                "type": "string"
+              },
+              "nodetask_name": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "start_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "total": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string"
+    },
+    "code": {
+      "type": "integer"
+    }
+  }
+}

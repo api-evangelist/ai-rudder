@@ -1,0 +1,426 @@
+# AIRUDDER API
+
+## Docs
+- [API 文档介绍](https://api-docs.airudder.com/doc-1824371.md): 
+- [Introductions](https://api-docs.airudder.com/doc-1549062.md): 
+- [快速上手](https://api-docs.airudder.com/doc-1825570.md): 
+- [Quick Start](https://api-docs.airudder.com/doc-1918333.md): 
+- 全局错误代码 [全局错误代码](https://api-docs.airudder.com/doc-1823970.md): 
+- Error Codes [Error Codes](https://api-docs.airudder.com/doc-1648295.md): 
+- [催收](https://api-docs.airudder.com/folder-10827211.md): 
+- 催收 [快速上手](https://api-docs.airudder.com/doc-1824381.md): 
+- Collection [Quick Start](https://api-docs.airudder.com/doc-1634807.md): 
+- 营销&电商 [快速上手](https://api-docs.airudder.com/doc-1836618.md): 
+- Telemarketing & E-commerce [Quick Start](https://api-docs.airudder.com/doc-1671664.md): 
+- 信审 [快速上手](https://api-docs.airudder.com/doc-1836690.md): 
+- Info Check [Quick Start](https://api-docs.airudder.com/doc-1671689.md): 
+- 传输过程中加解密 [API接口使用AES加解密对接](https://api-docs.airudder.com/doc-1678219.md): 
+- 传输过程中加解密 [API接口使用AES加解密对接-示例](https://api-docs.airudder.com/doc-1678229.md): 
+- Encryption and decryption during the transmission process [API Integration with AES Encryption/Decryption](https://api-docs.airudder.com/doc-6917040.md): 
+- Encryption and decryption during the transmission process [API Interface with AES Encryption/Decryption - Example](https://api-docs.airudder.com/doc-6917043.md): 
+- Chatbot > 接入 > 基础说明 [接入准备](https://api-docs.airudder.com/doc-3628568.md): 
+- Chatbot > 接入 > 基础说明 [错误码](https://api-docs.airudder.com/doc-3628575.md): 
+- Chatbot > 定制 > HSB [HSB关于custom字段使用说明](https://api-docs.airudder.com/doc-3666938.md): 
+- Chatbot English > Integration > Basic Guide [Quick Start](https://api-docs.airudder.com/doc-3647883.md): 
+- Chatbot English > Integration > Basic Guide [Error Code](https://api-docs.airudder.com/doc-3647884.md): 
+- 呼入机器人业务 [inbound业务对接介绍](https://api-docs.airudder.com/doc-3854132.md): 
+- Inbound [Inbound Business Integration Guide](https://api-docs.airudder.com/doc-3854174.md): 
+
+## API Docs
+- 鉴权方法 [验证并获取令牌](https://api-docs.airudder.com/api-53949513.md): 获取令牌并将其添加到其他API的请求header中， 令牌的有效时间为24小时，24小时内重新请求会将令牌的有效期再延长24小时。
+- Get the Authorization token [Token Authentication and Obtain](https://api-docs.airudder.com/api-44712004.md): Obtain the token and add it to the request header of other APIs. The token is valid for 24 hours, and any re-request made within this period will extend its validity by another 24 hours.
+- 催收 > 调用任务相关 API [创建外呼拨打任务](https://api-docs.airudder.com/api-465585365.md): 创建外呼拨打任务
+- 催收 > 调用任务相关 API [列出已创建的任务](https://api-docs.airudder.com/api-54087045.md): 通过分页的方式列出任务，任务将以创建时间倒序排列。
+- 催收 > 调用任务相关 API [停止一个呼叫任务](https://api-docs.airudder.com/api-54087361.md): 停止一个呼叫任务
+- 催收 > 调用任务相关 API [取消指定任务中的某个电话的拨打](https://api-docs.airudder.com/api-53996765.md): 取消指定任务中的某个电话的拨打
+- 催收 > 调用任务相关 API [任务结束状态通知](https://api-docs.airudder.com/api-54087615.md): 当任务结束时，主动通知对接方该任务已结束（如果任务被取消，则不会进行回调）。如果此url响应异常，我方会间隔1分钟进行重试，最多5次重试失败后不在进行通知。
+- 催收 > 调用任务相关 API [任务电话维度拨打结束状态通知 ](https://api-docs.airudder.com/api-54087801.md): 任务内电话拨打结束时(接通或者完成拨打次数)，不管接通还是未接通，会在完成全部的重拨次数后主动通知对接方该任务的此电话拨打数据。
+- 催收 > 调用任务相关 API [获取任务详细信息](https://api-docs.airudder.com/api-54087838.md): 通过TaskID获取任务内电话拨打的详细信息。
+- 催收 > 调用任务相关 API [获取单个案件通话录音](https://api-docs.airudder.com/api-54038717.md): 通过TaskID和被叫号码（Callee）来查询通话录音.仅支持最近1个月内的通话。 
+- 催收 > 调用任务相关 API [获取任务录音文件 ](https://api-docs.airudder.com/api-54037705.md): 获取对应任务的录音文件（打包mp3）下载地址，服务端保留最近一个月以内的录音。
+- 催收 > 调用任务相关 API [获取机器人列表](https://api-docs.airudder.com/api-65077525.md): 获取机器人列表以及机器人信息
+- 催收 > 调用任务相关 API [根据callid获取电话信息和录音链接](https://api-docs.airudder.com/api-175046157.md): 根据callid获取电话详情和录音链接，仅支持查询最近3个月的数据
+- 催收 > 调用任务相关 API [任务内AI转人工坐席成功时通知](https://api-docs.airudder.com/api-465874847.md): 任务内电话在转人工坐席成功时通知对接方（仅适用于我方系统获取到转人工成功状态的情况）。
+- 催收 > 调用计划相关的API [获取策略列表](https://api-docs.airudder.com/api-53996796.md): 获取策略列表
+- 催收 > 调用计划相关的API [创建策略计划拨打任务](https://api-docs.airudder.com/api-465587664.md): 创建呼叫计划
+- 催收 > 调用计划相关的API [获取计划状态信息](https://api-docs.airudder.com/api-53996774.md): 获取Plan目前的状态
+- 催收 > 调用计划相关的API [获取计划内任务轮次信息](https://api-docs.airudder.com/api-53996795.md): 获取Plan所包含的Task任务名，轮次，任务ID，任务状态。
+- 催收 > 调用计划相关的API [列出已创建的任务](https://api-docs.airudder.com/api-53996792.md): 通过分页的方式列出任务，任务将以创建时间倒序排列。
+- 催收 > 调用计划相关的API [停止一个呼叫任务](https://api-docs.airudder.com/api-53996793.md): 停止一个呼叫任务
+- 催收 > 调用计划相关的API [取消计划中的某个电话的拨打](https://api-docs.airudder.com/api-53996794.md): 取消整个Plan当前及后续任务中此号码的拨打
+- 催收 > 调用计划相关的API [计划结束状态通知](https://api-docs.airudder.com/api-53996790.md): 当Plan中所有Task都已经拨打完成,主动通知对接方该Plan的拨打数据。如果此url响应异常，我方会间隔1分钟进行重试，最多5次重试失败后不再进行通知。
+- 催收 > 调用计划相关的API [任务结束状态通知](https://api-docs.airudder.com/api-53996791.md): 当任务结束时，主动通知对接方该任务已结束。如果任务被取消，则不会进行回调。
+- 催收 > 调用计划相关的API [任务电话维度拨打结束状态通知](https://api-docs.airudder.com/api-405609472.md): 任务内电话拨打结束时(接通或者完成拨打次数)，不管接通还是未接通，会在完成全部的重拨次数后主动通知对接方该任务的此电话拨打数据。
+- 催收 > 调用计划相关的API [获取任务详细信息](https://api-docs.airudder.com/api-406013644.md): 通过TaskID获取任务内电话拨打的详细信息。
+- 催收 > 调用计划相关的API [获取单个案件通话录音](https://api-docs.airudder.com/api-53996787.md): 通过TaskID和被叫号码（Callee）来查询通话录音.仅支持最近1个月内的通话。 
+- 催收 > 调用计划相关的API [获取任务录音文件](https://api-docs.airudder.com/api-53996784.md): 获取对应任务的录音文件（打包mp3）下载地址，服务端保留最近一个月以内的录音。
+- 催收 > 调用计划相关的API [获取计划内某个电话所有的通话录音](https://api-docs.airudder.com/api-53996786.md): 通过PlanName和被叫号码（Callee）来查询通话录音
+- 催收 > 调用计划相关的API [根据callid获取电话信息和录音链接](https://api-docs.airudder.com/api-334042862.md): 根据callid获取电话详情和录音链接，仅支持查询最近3个月的数据
+- 催收 > 调用计划相关的API [获取机器人列表](https://api-docs.airudder.com/api-405627460.md): 获取机器人列表以及机器人信息
+- Collection > APIs Related to Calling Tasks [ Create a Calling Task ](https://api-docs.airudder.com/api-465595429.md): Create a calling task.
+- Collection > APIs Related to Calling Tasks [List the Task Created](https://api-docs.airudder.com/api-45099370.md): Get your task listed by pagination. Tasks listed in descending order of Task Creation Time.
+- Collection > APIs Related to Calling Tasks [Cancel a Calling Task](https://api-docs.airudder.com/api-45099127.md): Cancel a calling task.
+- Collection > APIs Related to Calling Tasks [Cancel a Certain Call in a Specific Task](https://api-docs.airudder.com/api-45102909.md): Cancel a certain call in a specific task.
+- Collection > APIs Related to Calling Tasks [Webhook of Task ](https://api-docs.airudder.com/api-48741747.md): When the task ends, actively notify the counterparty that the task has ended. If this URL responds abnormally, we will retry at 1 minute intervals, and will not make notifications after a maximum of 5 failed retries.
+- Collection > APIs Related to Calling Tasks [Webhook of Call](https://api-docs.airudder.com/api-48746120.md): When a call within a task ends (whether answered or the maximum dial attempts are reached), the system will proactively send the call data to the counterpart after all redial attempts are completed, regardless of whether the call was connected or not.
+- Collection > APIs Related to Calling Tasks [Obtain the Detailed Information of Tasks](https://api-docs.airudder.com/api-48941835.md): Obtain the Detailed Information of Tasks according to TaskID.
+- Collection > APIs Related to Calling Tasks [Obtain a Call Recording](https://api-docs.airudder.com/api-45102695.md): Using TaskID and Callee Number to get the call recording. Only the recordings of last one month is available.
+- Collection > APIs Related to Calling Tasks [Obtain Call Recordings](https://api-docs.airudder.com/api-45101013.md): Obtain task recording in .mp3 files. Only the recordings of latest one month is available.
+- Collection > APIs Related to Calling Tasks [Fetch robot list](https://api-docs.airudder.com/api-65089219.md): get robots list
+- Collection > APIs Related to Calling Tasks [Obtain call information and recording link by callid](https://api-docs.airudder.com/api-334042755.md): Obtain call details and recording link by callid. Only queries for data from the last 3 months are supported.
+- Collection > APIs Related to Calling Plans [Obtain the List of Strategies](https://api-docs.airudder.com/api-45194593.md): Obtain the List of Strategies.
+- Collection > APIs Related to Calling Plans [Create a Dialing Plan with Strategy](https://api-docs.airudder.com/api-465587667.md): Create a dialing plan.
+- Collection > APIs Related to Calling Plans [Obtain the Information of Plan Status](https://api-docs.airudder.com/api-45201678.md): Obtain the current status of the plan.
+- Collection > APIs Related to Calling Plans [Obtain the Information of Each Round of the Plan](https://api-docs.airudder.com/api-45488224.md): Obtain the information of number of rounds, task name, task ID and task status in the plan.
+- Collection > APIs Related to Calling Plans [List the Task Created](https://api-docs.airudder.com/api-47954168.md): Get your task listed by pagination. Tasks listed in descending order of Task Creation Time.
+- Collection > APIs Related to Calling Plans [Cancel a Calling Task](https://api-docs.airudder.com/api-47943536.md): Cancel a calling task.
+- Collection > APIs Related to Calling Plans [Cancel a Certain Call in a Plan](https://api-docs.airudder.com/api-45197411.md): Cancel the certain phone call in the whole plan.
+- Collection > APIs Related to Calling Plans [Webhook of Plan](https://api-docs.airudder.com/api-45195612.md): When all the tasks of the plan end, we will actively notify the counterparty that the plan has ended. If this URL responds abnormally, we will retry at 1 minute intervals, and will not be notified after a maximum of 5 failed retries.
+- Collection > APIs Related to Calling Plans [Webhook of Task](https://api-docs.airudder.com/api-47943717.md): When the task ends, we will actively notify the counterparty that the task has ended. If this URL responds abnormally, we will retry at 1 minute intervals, and will not make notifications after a maximum of 5 failed retries.
+- Collection > APIs Related to Calling Plans [Webhook of Call](https://api-docs.airudder.com/api-406102281.md): When a call within a task ends (whether answered or the maximum dial attempts are reached), the system will proactively send the call data to the counterpart after all redial attempts are completed, regardless of whether the call was connected or not.
+- Collection > APIs Related to Calling Plans [Obtain the Detailed Information of Tasks](https://api-docs.airudder.com/api-408098978.md): Obtain the Detailed Information of Tasks according to TaskID.
+- Collection > APIs Related to Calling Plans [Obtain a Call Recording](https://api-docs.airudder.com/api-47944174.md): Using TaskID and Callee Number to get the call recordings address. Only the recordings of last one month is available.
+- Collection > APIs Related to Calling Plans [Obtain Task Recordings](https://api-docs.airudder.com/api-47944202.md): Obtain task recording in .mp3 files. Only the recordings of latest one month is available.
+- Collection > APIs Related to Calling Plans [Obtain All Call Recordings of a Number in the Plan](https://api-docs.airudder.com/api-45492740.md): Using Plan Name and Callee Number to get all dialing recordings of the number in the plan.
+- Collection > APIs Related to Calling Plans [Fetch robot list](https://api-docs.airudder.com/api-406098411.md): get robots list
+- Collection > APIs Related to Calling Plans [Obtain call information and recording link by callid](https://api-docs.airudder.com/api-406099921.md): Obtain call details and recording link by callid. Only queries for data from the last 3 months are supported.
+- 营销&电商 > 调用任务相关的API [创建拨打任务](https://api-docs.airudder.com/api-465587668.md): 创建拨打任务
+- 营销&电商 > 调用任务相关的API [列出已创建的任务](https://api-docs.airudder.com/api-54097729.md): 通过分页的方式列出任务，任务将以创建时间倒序排列。
+- 营销&电商 > 调用任务相关的API [停止一个呼叫任务 ](https://api-docs.airudder.com/api-54097704.md): 停止一个呼叫任务。
+- 营销&电商 > 调用任务相关的API [取消某个任务电话拨打](https://api-docs.airudder.com/api-54047054.md): 取消某个任务电话拨打
+- 营销&电商 > 调用任务相关的API [获取任务详细信息](https://api-docs.airudder.com/api-406025025.md): 通过TaskID获取任务内电话拨打的详细信息。
+- 营销&电商 > 调用任务相关的API [任务结束状态通知](https://api-docs.airudder.com/api-54097609.md): 当任务结束时，主动通知对接方该任务已结束。如果任务被取消，则不会进行回调。
+- 营销&电商 > 调用任务相关的API [任务电话维度拨打结束状态通知](https://api-docs.airudder.com/api-406019726.md): 任务内电话拨打结束时(接通或者完成拨打次数)，不管接通还是未接通，会在完成全部的重拨次数后主动通知对接方该任务的此电话拨打数据。
+- 营销&电商 > 调用任务相关的API [获取单个案件通话录音](https://api-docs.airudder.com/api-54097144.md): 通过TaskID和被叫号码（Callee）来查询通话录音.仅支持最近1个月内的通话。
+- 营销&电商 > 调用任务相关的API [获取任务录音文件](https://api-docs.airudder.com/api-54097551.md): 获取对应任务的录音文件（打包mp3）下载地址，服务端保留最近一个月以内的录音。
+- 营销&电商 > 调用任务相关的API [获取机器人列表](https://api-docs.airudder.com/api-65088219.md): 获取机器人列表以及机器人信息
+- 营销&电商 > 调用任务相关的API [根据callid获取电话信息和录音链接](https://api-docs.airudder.com/api-175046155.md): 根据callid获取电话详情和录音链接，仅支持查询最近3个月的数据
+- 营销&电商 > 调用计划相关的API [获取策略列表](https://api-docs.airudder.com/api-54047070.md): 获取策略列表
+- 营销&电商 > 调用计划相关的API [创建策略计划拨打任务](https://api-docs.airudder.com/api-465587669.md): 创建策略计划拨打任务
+- 营销&电商 > 调用计划相关的API [获取计划状态信息](https://api-docs.airudder.com/api-54047057.md): 获取计划状态信息
+- 营销&电商 > 调用计划相关的API [获取计划内任务轮次信息](https://api-docs.airudder.com/api-54047065.md): 获取Plan所包含的Task任务名，轮次，任务ID，任务状态。
+- 营销&电商 > 调用计划相关的API [列出已创建的任务](https://api-docs.airudder.com/api-54047068.md): 通过分页的方式列出任务，任务将以创建时间倒序排列。
+- 营销&电商 > 调用计划相关的API [取消一个呼叫任务](https://api-docs.airudder.com/api-54047067.md): 停止一个呼叫任务。
+- 营销&电商 > 调用计划相关的API [取消计划中的某个电话的拨打](https://api-docs.airudder.com/api-54047066.md): 取消整个Plan当前及后续任务中此号码的拨打。
+- 营销&电商 > 调用计划相关的API [计划结束状态通知](https://api-docs.airudder.com/api-54047063.md): 当Plan中所有Task都已经拨打完成,主动通知对接方该Plan的拨打数据。如果此url响应异常，我方会间隔1分钟进行重试，最多5次重试失败后不再进行通知。
+- 营销&电商 > 调用计划相关的API [任务结束状态通知](https://api-docs.airudder.com/api-54047060.md): 当任务结束时，主动通知对接方该任务已结束。如果任务被取消，则不会进行回调。
+- 营销&电商 > 调用计划相关的API [任务电话维度拨打结束状态通知](https://api-docs.airudder.com/api-406024692.md): 任务内电话拨打结束时(接通或者完成拨打次数)，不管接通还是未接通，会在完成全部的重拨次数后主动通知对接方该任务的此电话拨打数据。
+- 营销&电商 > 调用计划相关的API [获取任务详细信息](https://api-docs.airudder.com/api-406025720.md): 通过TaskID获取任务内电话拨打的详细信息。
+- 营销&电商 > 调用计划相关的API [获取单个案件通话录音](https://api-docs.airudder.com/api-54047062.md): 通过TaskID和被叫号码（Callee）来查询通话录音.仅支持最近1个月内的通话。
+- 营销&电商 > 调用计划相关的API [获取任务录音文件](https://api-docs.airudder.com/api-54047061.md): 获取对应任务的录音文件（打包mp3）下载地址，服务端保留最近一个月以内的录音。
+- 营销&电商 > 调用计划相关的API [获取计划内某个电话所有的通话录音](https://api-docs.airudder.com/api-54047058.md): 通过PlanName和被叫号码（Callee）来查询通话录音
+- 营销&电商 > 调用计划相关的API [获取机器人列表](https://api-docs.airudder.com/api-405647983.md): 获取机器人列表以及机器人信息
+- 营销&电商 > 调用计划相关的API [根据callid获取电话信息和录音链接](https://api-docs.airudder.com/api-405648147.md): 根据callid获取电话详情和录音链接，仅支持查询最近3个月的数据
+- Telemarketing & E-commerce > APIs Related to Calling Tasks [ Create a Calling Task ](https://api-docs.airudder.com/api-45460188.md):  create a task.
+- Telemarketing & E-commerce > APIs Related to Calling Tasks [List the Task Created](https://api-docs.airudder.com/api-45460190.md): Get your task listed by pagination. Tasks listed in descending order of Task Creation Time.
+- Telemarketing & E-commerce > APIs Related to Calling Tasks [Cancel a Calling Task](https://api-docs.airudder.com/api-45460189.md): Cancel a calling task.
+- Telemarketing & E-commerce > APIs Related to Calling Tasks [Cancel a Certain Call in a Specific Task](https://api-docs.airudder.com/api-45460195.md): Cancel a certain call in a specific task.
+- Telemarketing & E-commerce > APIs Related to Calling Tasks [Webhook of task ](https://api-docs.airudder.com/api-48750346.md): When the task ends, actively notify the counterparty that the task has ended. If this URL responds abnormally, we will retry at 1 minute intervals, and will not make notifications after a maximum of 5 failed retries.
+- Telemarketing & E-commerce > APIs Related to Calling Tasks [Webhook of Call ](https://api-docs.airudder.com/api-465637362.md): When a call within a task ends (whether answered or the maximum dial attempts are reached), the system will proactively send the call data to the counterpart after all redial attempts are completed, regardless of whether the call was connected or not.
+- Telemarketing & E-commerce > APIs Related to Calling Tasks [Obtain the Detailed Information of Tasks](https://api-docs.airudder.com/api-408101939.md): Obtain the Detailed Information of Tasks according to TaskID.
+- Telemarketing & E-commerce > APIs Related to Calling Tasks [Obtain a Call Recording](https://api-docs.airudder.com/api-45460194.md): Using TaskID and Callee Number to get the call recording. Only the recordings of last one month is available.
+- Telemarketing & E-commerce > APIs Related to Calling Tasks [Obtain Task Recordings](https://api-docs.airudder.com/api-45460193.md): Obtain task recording in .mp3 files. Only the recordings of latest one month is available.
+- Telemarketing & E-commerce > APIs Related to Calling Tasks [Fetch robot list ](https://api-docs.airudder.com/api-65092663.md): get robots list
+- Telemarketing & E-commerce > APIs Related to Calling Tasks [Obtain call information and recording link by callid](https://api-docs.airudder.com/api-408107091.md): Obtain call details and recording link by callid. Only queries for data from the last 3 months are supported.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Obtain the List of Strategies](https://api-docs.airudder.com/api-45460200.md): Obtain the List of Strategies.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Create a Dialing Plan with Strategy](https://api-docs.airudder.com/api-465587678.md): Create a dialing plan.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Obtain the Information of Plan Status](https://api-docs.airudder.com/api-45460205.md): Obtain the current status of the plan.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Obtain the Information of Each Round of the Plan](https://api-docs.airudder.com/api-45460204.md): Obtain the information of number of rounds, task name, task ID and task status in the plan.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [List the Task Created](https://api-docs.airudder.com/api-47954713.md): Get your task listed by pagination. Tasks listed in descending order of Task Creation Time.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Cancel a Calling Task](https://api-docs.airudder.com/api-47954724.md): Stop task.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Cancel a Certain Call in a Plan](https://api-docs.airudder.com/api-45460202.md): Cancel the certain phone call in the whole plan.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Webhook of Plan](https://api-docs.airudder.com/api-45460201.md): When all the tasks of the plan end, we will actively notify the counterparty that the plan has ended. If this URL responds abnormally, we will retry at 1 minute intervals, and will not be notified after a maximum of 5 failed retries.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Webhook of Task](https://api-docs.airudder.com/api-47954788.md): When the task ends, we will actively notify the counterparty that the task has ended. If this URL responds abnormally, we will retry at 1 minute intervals, and will not make notifications after a maximum of 5 failed retries.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Webhook of Call](https://api-docs.airudder.com/api-465650084.md): When a call within a task ends (whether answered or the maximum dial attempts are reached), the system will proactively send the call data to the counterpart after all redial attempts are completed, regardless of whether the call was connected or not.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Obtain the Detailed Information of Tasks](https://api-docs.airudder.com/api-408104544.md): Obtain the Detailed Information of Tasks according to TaskID.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Obtain a Call Recording](https://api-docs.airudder.com/api-47954858.md): Using TaskID and Callee Number to get the calling record. Only the recordings of last one month is available.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Obtain Call Recordings](https://api-docs.airudder.com/api-47954873.md): Obtain task recording in .mp3 files. Only the recordings of latest one month is available.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Obtain All Call Records of a Number in the Plan](https://api-docs.airudder.com/api-45460203.md): Using Plan Name and Callee Number to get all dialing records of the number in the plan.
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Fetch robot list](https://api-docs.airudder.com/api-408107439.md): get robots list
+- Telemarketing & E-commerce > APIs Related to Calling Plans [Obtain call information and recording link by callid](https://api-docs.airudder.com/api-408107466.md): Obtain call details and recording link by callid. Only queries for data from the last 3 months are supported.
+- 信审 > 调用任务相关的API [创建拨打任务](https://api-docs.airudder.com/api-465587679.md): 创建拨打任务
+- 信审 > 调用任务相关的API [列出已创建的任务 ](https://api-docs.airudder.com/api-54618923.md): 通过分页的方式列出任务，任务将以创建时间倒序排列。
+- 信审 > 调用任务相关的API [停止一个任务拨打 ](https://api-docs.airudder.com/api-54618939.md): 停止任务
+- 信审 > 调用任务相关的API [取消某个任务电话拨打](https://api-docs.airudder.com/api-54047407.md): 取消某个任务电话拨打
+- 信审 > 调用任务相关的API [任务结束状态通知 ](https://api-docs.airudder.com/api-54618764.md): 任务结束时，主动通知对接方该任务已结束（如果任务被取消，则不会进行回调）。如果此url响应异常，我方会间隔1分钟进行重试，最多5次重试失败后不在进行通知。
+- 信审 > 调用任务相关的API [任务电话维度拨打结束状态通知](https://api-docs.airudder.com/api-408129314.md): 任务内电话拨打结束时(接通或者完成拨打次数)，不管接通还是未接通，会在完成全部的重拨次数后主动通知对接方该任务的此电话拨打数据。
+- 信审 > 调用任务相关的API [获取任务详细信息 ](https://api-docs.airudder.com/api-54618689.md): 通过task_id获取任务的详细信息，每个号码的回答详情会包含在detail数组中，并且嵌套了问题的详情。所有时间均为客户所在地区时区时间。
+- 信审 > 调用任务相关的API [获取单个案件通话录音 ](https://api-docs.airudder.com/api-54618649.md): 通过TaskID和被叫号码（Callee）来查询通话录音
+- 信审 > 调用任务相关的API [获取任务录音文件 ](https://api-docs.airudder.com/api-54618609.md): 获取对应任务的录音文件（打包mp3）下载地址，仅保留最近一个月以内的录音。
+- 信审 > 调用任务相关的API [获取机器人列表](https://api-docs.airudder.com/api-65088269.md): 获取机器人列表以及机器人信息
+- 信审 > 调用任务相关的API [根据callid获取电话信息和录音链接](https://api-docs.airudder.com/api-175046149.md): 根据callid获取电话详情和录音链接，仅支持查询最近3个月的数据
+- 信审 > 调用计划相关的API [获取策略列表](https://api-docs.airudder.com/api-54047411.md): 获取策略列表
+- 信审 > 调用计划相关的API [创建策略计划拨打任务](https://api-docs.airudder.com/api-465587682.md): 创建策略计划拨打任务
+- 信审 > 调用计划相关的API [获取计划状态信息](https://api-docs.airudder.com/api-54047422.md): 获取Plan目前的状态
+- 信审 > 调用计划相关的API [获取计划内任务轮次信息](https://api-docs.airudder.com/api-54047424.md): 获取Plan所包含的Task任务名，轮次，任务ID，任务状态。
+- 信审 > 调用计划相关的API [列出已创建的任务](https://api-docs.airudder.com/api-54047413.md): 通过分页的方式列出任务，任务将以创建时间倒序排列。
+- 信审 > 调用计划相关的API [停止一个任务拨打](https://api-docs.airudder.com/api-54047416.md): 停止任务
+- 信审 > 调用计划相关的API [取消计划中的某个电话的拨打](https://api-docs.airudder.com/api-54047421.md): 取消整个Plan当前及后续任务中此号码的拨打
+- 信审 > 调用计划相关的API [计划结束状态通知](https://api-docs.airudder.com/api-54047420.md): Plan中所有Task都已经拨打完成,主动通知对接方该Plan的拨打数据。如果此url响应异常，我方会间隔1分钟进行重试，最多5次重试失败后不在进行通知。
+- 信审 > 调用计划相关的API [任务结束状态通知](https://api-docs.airudder.com/api-54047419.md): 任务结束时，主动通知对接方该任务已结束（如果任务被取消，则不会进行回调）。如果此url响应异常，我方会间隔1分钟进行重试，最多5次重试失败后不在进行通知。
+- 信审 > 调用计划相关的API [任务电话维度拨打结束状态通知](https://api-docs.airudder.com/api-408232099.md): 任务内电话拨打结束时(接通或者完成拨打次数)，不管接通还是未接通，会在完成全部的重拨次数后主动通知对接方该任务的此电话拨打数据。
+- 信审 > 调用计划相关的API [获取任务详细信息](https://api-docs.airudder.com/api-408232631.md): 通过task_id获取任务的详细信息，每个号码的回答详情会包含在detail数组中，并且嵌套了问题的详情。所有时间均为客户所在地区时区时间。
+- 信审 > 调用计划相关的API [获取单个案件通话录音](https://api-docs.airudder.com/api-54047417.md): 通过TaskID和被叫号码（Callee）来查询通话录音
+- 信审 > 调用计划相关的API [获取任务录音文件](https://api-docs.airudder.com/api-54047415.md): 获取对应任务的录音文件（打包mp3）下载地址，仅保留最近一个月以内的录音。
+- 信审 > 调用计划相关的API [获取计划内某个电话所有的通话录音](https://api-docs.airudder.com/api-54047414.md): 通过PlanName和被叫号码（Callee）来查询通话录音
+- 信审 > 调用计划相关的API [获取机器人列表](https://api-docs.airudder.com/api-405648923.md): 获取机器人列表以及机器人信息
+- 信审 > 调用计划相关的API [根据callid获取电话信息和录音链接](https://api-docs.airudder.com/api-405648942.md): 根据callid获取电话详情和录音链接，仅支持查询最近3个月的数据
+- Info Check > APIs Related to Calling Tasks [Create a Calling Task](https://api-docs.airudder.com/api-465587683.md): Create a calling task.
+- Info Check > APIs Related to Calling Tasks [List the Task Created](https://api-docs.airudder.com/api-45285961.md): Get your task listed by pagination. Tasks listed in descending order of Task Creation Time.
+- Info Check > APIs Related to Calling Tasks [Cancel a Calling Task](https://api-docs.airudder.com/api-45285904.md): Stop task.
+- Info Check > APIs Related to Calling Tasks [Cancel a Certain Call in a Specific Task](https://api-docs.airudder.com/api-45288920.md): Cancel a certain call in a specific task.
+- Info Check > APIs Related to Calling Tasks [Webhook of task](https://api-docs.airudder.com/api-45289092.md): When the task ends, actively notify the counterparty that the task has ended. If this URL responds abnormally, we will retry at 1 minute intervals, and will not make notifications after a maximum of 5 failed retries.
+- Info Check > APIs Related to Calling Tasks [Webhook of Call ](https://api-docs.airudder.com/api-465669721.md): When a call within a task ends (whether answered or the maximum dial attempts are reached), the system will proactively send the call data to the counterpart after all redial attempts are completed, regardless of whether the call was connected or not.
+- Info Check > APIs Related to Calling Tasks [Obtain the Detailed Information of Tasks](https://api-docs.airudder.com/api-45287767.md): Get detailed task information use task_id. The detailed records of every number will appear in the detail array, and also the details are nested in it.
+- Info Check > APIs Related to Calling Tasks [Obtain the Detailed Information of Tasks](https://api-docs.airudder.com/api-465669745.md): Get detailed task information use task_id. The detailed records of every number will appear in the detail array, and also the details are nested in it.
+- Info Check > APIs Related to Calling Tasks [Obtain a Call Recording](https://api-docs.airudder.com/api-45288825.md): Using TaskID and Callee Number to get the call recording. Only the recordings of last one month is available.
+- Info Check > APIs Related to Calling Tasks [Obtain Task Recordings](https://api-docs.airudder.com/api-45288718.md): Obtain task recording in .mp3 files. Only the recordings of latest one month is available.
+- Info Check > APIs Related to Calling Tasks [Fetch robot list ](https://api-docs.airudder.com/api-65092484.md): get robots list
+- Info Check > APIs Related to Calling Tasks [Obtain call information and recording link by callid](https://api-docs.airudder.com/api-408235418.md): Obtain call details and recording link by callid. Only queries for data from the last 3 months are supported.
+- Info Check > APIs Related to Calling Plans [Obtain the List of Strategies](https://api-docs.airudder.com/api-45289951.md): Obtain the List of Strategies.
+- Info Check > APIs Related to Calling Plans [Create a Dialing Plan with Strategy](https://api-docs.airudder.com/api-465587684.md): Create a dialing plan.
+- Info Check > APIs Related to Calling Plans [Obtain the Information of Plan Status](https://api-docs.airudder.com/api-45290609.md): Obtain the current status of the plan.
+- Info Check > APIs Related to Calling Plans [Obtain the Information of Each Round of the Plan](https://api-docs.airudder.com/api-45290566.md): Obtain the information of number of rounds, task name, task ID and task status in the plan.
+- Info Check > APIs Related to Calling Plans [List the Task Created](https://api-docs.airudder.com/api-47977709.md): Get your task listed by pagination. Tasks listed in descending order of Task Creation Time.
+- Info Check > APIs Related to Calling Plans [Cancel a Calling Task](https://api-docs.airudder.com/api-47979877.md): Stop task.
+- Info Check > APIs Related to Calling Plans [Cancel a Certain Call in a Plan](https://api-docs.airudder.com/api-45290531.md): Cancel the certain phone call in the whole plan.
+- Info Check > APIs Related to Calling Plans [Webhook of Plan](https://api-docs.airudder.com/api-45290487.md): When all the tasks of the plan end, we will actively notify the counterparty that the plan has ended. If this URL responds abnormally, we will retry at 1 minute intervals, and will not be notified after a maximum of 5 failed retries.
+- Info Check > APIs Related to Calling Plans [Webhook of Task](https://api-docs.airudder.com/api-47980043.md): When the task ends, we will actively notify the counterparty that the task has ended. If this URL responds abnormally, we will retry at 1 minute intervals, and will not make notifications after a maximum of 5 failed retries.
+- Info Check > APIs Related to Calling Plans [Webhook of Call](https://api-docs.airudder.com/api-465669759.md): When a call within a task ends (whether answered or the maximum dial attempts are reached), the system will proactively send the call data to the counterpart after all redial attempts are completed, regardless of whether the call was connected or not.
+- Info Check > APIs Related to Calling Plans [Obtain the Detailed Information of Tasks](https://api-docs.airudder.com/api-125954059.md): Get detailed task information use task_id. The detailed records of every number will appear in the detail array, and also the details are nested in it.
+- Info Check > APIs Related to Calling Plans [Obtain the Detailed Information of Tasks](https://api-docs.airudder.com/api-465669834.md): Get detailed task information use task_id. The detailed records of every number will appear in the detail array, and also the details are nested in it.
+- Info Check > APIs Related to Calling Plans [Obtain a Call Recording](https://api-docs.airudder.com/api-47980986.md): Using TaskID and Callee Number to get the call recording. Only the recordings of last one month is available.
+- Info Check > APIs Related to Calling Plans [Obtain Call Recordings](https://api-docs.airudder.com/api-47981193.md): Obtain task recordings in .mp3 files. Only the recordings of latest one month is available.
+- Info Check > APIs Related to Calling Plans [Obtain All Call Records of a Number in the Plan](https://api-docs.airudder.com/api-45290542.md): Using Plan Name and Callee Number to get all dialing records of the number in the plan.
+- Info Check > APIs Related to Calling Plans [Fetch robot list](https://api-docs.airudder.com/api-408235957.md): get robots list
+- Info Check > APIs Related to Calling Plans [Obtain call information and recording link by callid](https://api-docs.airudder.com/api-408235962.md): Obtain call details and recording link by callid. Only queries for data from the last 3 months are supported.
+- Workflow 工作流 > 预测式外呼信息回调 [PDS 任务状态更改回调](https://api-docs.airudder.com/api-53945402.md): 在任务执行过程中，任务、联系人、座席每有状态变化均会发起回调，回调的消息体也存在三种格式。本接口示例是任务状态更改时的回调信息。
+- Workflow 工作流 > 预测式外呼信息回调 [PDS 联系人状态更改回调](https://api-docs.airudder.com/api-53945401.md): 在任务执行过程中，任务、联系人、座席每有状态变化均会发起回调，回调的消息体也存在三种格式。本接口示例是联系人状态更改时的回调信息。
+- Workflow 工作流 > 预测式外呼信息回调 [PDS 坐席状态更改回调](https://api-docs.airudder.com/api-53945400.md): 在任务执行过程中，任务、联系人、座席每有状态变化均会发起回调，回调的消息体也存在三种格式。本接口示例是坐席状态更改时的回调信息。
+- Workflow 工作流 [创建一个新的Workflow任务](https://api-docs.airudder.com/api-465587685.md): 创建一个新的Workflow任务
+- Workflow 工作流 [获取workflow模板列表](https://api-docs.airudder.com/api-53945397.md): 获取workflow模板列表，按创建时间倒序排列。
+- Workflow 工作流 [为workflow任务新增名单](https://api-docs.airudder.com/api-53945396.md): 往已创建的workflow任务中新增名单，适用于名单的拨打/触达流程相同，且名单是短时间内先后由您的业务系统产生的；在添加名单时请注意原workflow任务状态，若已结束或者已取消则无法添加名单；同时请注意原workflow任务的结束时间，若结束时间临近，可能导致新增的名单无法按照预期走完所有流程。
+- Workflow 工作流 [更新workflow任务内的名单信息](https://api-docs.airudder.com/api-53945394.md): 更新workflow任务里部分名单的信息，适用于在workflow运行过程中名单的信息有变更的情况，通过此接口可以及时更新信息，保证拨打/触达时的信息与您的业务系统一致。一般推荐在创建workflow时上传caseid，避免有电话号码重复的情况。
+- Workflow 工作流 [取消workflow任务内某个电话的后续流程](https://api-docs.airudder.com/api-53945390.md): 适用于在workflow运行过程中名单的信息有变更，且不需要进行后续的拨打/触达的情况，通过此接口可以取消该名单的后续所有流程。在取消名单时请注意workflow任务状态，若已结束或者已取消则无法取消名单；同时若该名单在workflow内的流程已全部运行结束，也无法取消。
+- Workflow 工作流 [Workflow外呼电话拨打结束通知 (催收/营销/电商示例)](https://api-docs.airudder.com/api-465685625.md): 任务内电话拨打结束时(接通或者完成拨打次数)，不管接通还是未接通，会在完成全部的重拨次数后主动通知对接方该任务的此电话拨打数据。
+- Workflow 工作流 [Workflow外呼电话拨打结束通知 (信审示例)](https://api-docs.airudder.com/api-465702496.md): 任务内电话拨打结束时(接通或者完成拨打次数)，不管接通还是未接通，会在完成全部的重拨次数后主动通知对接方该任务的此电话拨打数据。
+- Workflow 工作流 [自定义API 节点数据推送](https://api-docs.airudder.com/api-465767086.md): 电话拨打结束后，该名单经过API节点时进行通知。API节点在web端workflow模板中进行配置，支持配置自定义通知数据，满足客户个性化的数据回传/查询/处理需求。推送范围我机器人外呼任务（包括Voicebot Call Action和策略组件）。 
+- Workflow 工作流 [验证 自定义API 节点数据推送](https://api-docs.airudder.com/api-465767089.md): 使用自定义API 数据推送的部分参数查询，验证自定API节点的推送数据是否正确。 也可以用来查询历史数据，最多支持查询三个月前的历史数据。
+- Workflow 工作流 [停止workflow任务](https://api-docs.airudder.com/api-53945392.md): 停止workflow任务
+- Workflow 工作流 [获取workflow任务列表](https://api-docs.airudder.com/api-53945395.md): 获取workflow任务列表,按创建时间倒序排列。
+- Workflow 工作流 [获取workflow实例的子任务列表信息](https://api-docs.airudder.com/api-53945399.md): 获取workflow实例的子任务列表信息，在一个workflow任务运行时，每个Action节点都将生成一个子任务，一个子任务可能产生多个外呼任务（注意区分子任务与外呼任务的区别）。
+- Workflow 工作流 [获取workflow节点运行的外呼任务](https://api-docs.airudder.com/api-113837508.md): 获取workflow实例内产生的所有外呼任务列表信息，在一个workflow任务运行时，每个Voicebot Call Action节点都将生成一个子任务，一个子任务可能产生多个外呼任务（注意区分子任务与外呼任务的区别）。
+- Workflow 工作流 [获取workflow外呼任务明细 (催收/营销/电商示例)](https://api-docs.airudder.com/api-465702484.md): 通过外呼任务（task_id）获取任务内电话的拨打明细。该接口和``` /service/cloud/detail（获取任务详细信息）``` 接口返回相似，只是增加了 workflow 相关数据："workflow_id"、"workflow_name"、"nodetask_id"、"nodetask_name"、"case_id"。且返回的所有字段含义与“Workflow外呼电话拨打结束通知”一致。
+- Workflow 工作流 [获取workflow外呼任务明细（信审示例）](https://api-docs.airudder.com/api-465702529.md): 通过外呼任务（task_id）获取任务内电话的拨打明细。该接口和``` /service/cloud/ic_detail（获取任务详细信息）``` 接口返回相似，只是增加了 workflow 相关数据："workflow_id"、"workflow_name"、"nodetask_id"、"nodetask_name"、"case_id"。且返回的所有字段含义与“Workflow外呼电话拨打结束通知”一致。
+- Workflow 工作流 [根据callee/caseid和taskid/workflow_id获取电话信息和录音链接](https://api-docs.airudder.com/api-175048359.md): 根据callee/caseid和taskid/workflow_id获取电话信息和录音链接，仅支持查询最近3个月的数据。
+- Workflow 工作流 [根据callid获取电话信息和录音链接](https://api-docs.airudder.com/api-168414595.md): 根据callid获取电话详情和录音链接，仅支持查询最近3个月的数据
+- Workflow 工作流 [获取workflow里单个电话的所有录音](https://api-docs.airudder.com/api-53945391.md): 获取workflow里单个电话的所有录音
+- Workflow 工作流 [通过 case_id/callee 查询 workflow_id](https://api-docs.airudder.com/api-113963016.md): 
+- Workflow 工作流 [workflow 名单结束通知](https://api-docs.airudder.com/api-113886915.md): 名单在workflow内结束流转时，逐一发起通知至配置的URL。
+- Workflow 工作流 [workflow 状态变更通知](https://api-docs.airudder.com/api-175924373.md): workflow状态变为cancelled和finished时主动通知对接方
+- Workflow 工作流 [获取workflow节点运行的WABA任务](https://api-docs.airudder.com/api-236526871.md): 获取workflow实例内产生的所有WABA任务列表信息，在一个workflow任务运行时，每个 WABA Template节点可能会产生多个WABA任务。
+- Workflow 工作流 [获取workflow内WABA任务明细](https://api-docs.airudder.com/api-236528366.md): 通过WABA任务ID获取WABA任务的名单发送状态明细。
+- Workflow 工作流 [Workflow内WABA Template消息状态变更通知](https://api-docs.airudder.com/api-285317014.md): 当Workflow内WABA Template节点发送的WABA 消息状态变更时主动通知对接方。每条WABA消息每一次状态变更均进行通知。
+- Workflow 工作流 [Workflow内Chatbot会话结束通知](https://api-docs.airudder.com/api-286217979.md): 在 Workflow 中，通过 WABA Template 节点发送消息后，若客户回复并触发绑定于该模板的 Chatbot 会话，当客户与 Chatbot 的对话结束时，系统将主动向对接方发送会话结束通知。若会话存在转人工，则等待转人工完成、会话完整结束后再通知。
+- Workflow 工作流 [获取Workflow内SMS message记录](https://api-docs.airudder.com/api-346318845.md): 获取Workflow内短信发送明细。
+- Workflow 工作流 [Workflow内SMS message状态变更通知](https://api-docs.airudder.com/api-346318869.md): 在 Workflow 任务内发送的SMS message在状态变更和短链被点击时将通知对接方
+- Workflow 工作流 [创建一个新的Workflow任务 Copy](https://api-docs.airudder.com/api-501336685.md): 创建一个新的Workflow任务
+- Workflow > Webhooks of the Info of Predictive Dialer System [Webhook of Predictive Dialer Task Status Changes](https://api-docs.airudder.com/api-50408764.md): During the execution of the task, any status change of the task, contact, or agent will trigger a callback, and there are three formats for the callback message body. This interface example is the callback information when the task status changes.
+- Workflow > Webhooks of the Info of Predictive Dialer System [Webhook of Predictive Dialer Contacts Status Changes](https://api-docs.airudder.com/api-50409091.md): During the execution of the task, any status change of the task, contact, or agent will trigger a callback, and there are three formats for the callback message body. This interface example is the callback information when the contact status changes.
+- Workflow > Webhooks of the Info of Predictive Dialer System [Webhook of Predictive Dialer Agents Status Changes](https://api-docs.airudder.com/api-50406436.md): During the execution of the task, any status change of the task, contact, or agent will trigger a callback, and there are three formats for the callback message body. This interface example is the callback information when the agent status changes.
+- Workflow [Create a New WorkFlow Task](https://api-docs.airudder.com/api-465587694.md): Create a new WorkFlow Task.
+- Workflow [Obtain the List of Workflow Templates](https://api-docs.airudder.com/api-45229623.md): Obtain the list of Workflow Templates in reverse order of Creation Time.
+- Workflow [Add lists to an workflow task](https://api-docs.airudder.com/api-45244680.md): Add new lists to an existing workflow task. This is applicable when the call/reach process for the lists is the same, and the lists are generated by your business system in close succession. Please note the following when adding lists:
+- Workflow [Update the List Info of Workflow Task](https://api-docs.airudder.com/api-45246261.md): Update the information of specific lists within a workflow task. This is applicable when there are changes to the information of lists during the workflow execution. By using this interface, you can promptly update the information to ensure consistency between the information used for calling/reaching and your business system. It is generally recommended to upload the case ID during workflow creation to avoid any potential duplication of phone numbers.
+- Workflow [Cancel the  processes for a specific list](https://api-docs.airudder.com/api-45246616.md): This interface is suitable for situations where there are changes to the information of lists during the workflow execution, and there is no need for further calling/reaching processes. By using this interface, you can cancel all subsequent processes for that particular list. When canceling a list, please consider the status of the workflow task. If it has already ended or been canceled, it will not be possible to cancel the list. Additionally, if all the processes within the workflow for that list have already been completed, it will also not be possible to cancel it.
+- Workflow [Notification of Call Completion in Workflow(Collection/Telemarketing/E-commerce)](https://api-docs.airudder.com/api-465847457.md): When a call within a task ends (whether answered or the maximum dial attempts are reached), the system will proactively send the call data to the counterpart after all redial attempts are completed, regardless of whether the call was connected or not.
+- Workflow [Notification of Call Completion in Workflow(Info Check)](https://api-docs.airudder.com/api-465777786.md): When a call within a task ends (whether answered or the maximum dial attempts are reached), the system will proactively send the call data to the counterpart after all redial attempts are completed, regardless of whether the call was connected or not.
+- Workflow [Custom API Node Data Push](https://api-docs.airudder.com/api-465777795.md): After the phone call is completed, initiate a notification through an API node.The API node is configured in the web-based workflow template, supporting the customization of notification data to meet customers' personalized requirements for data feedback, retrieval, and processing. The push scope includes outbound tasks performed by the voicebot (including Voicebot Call Action and strategy components).
+- Workflow [Verify the Custom API Node Data Push](https://api-docs.airudder.com/api-465777797.md): Verify and check if some of the data pushed by the custom API is correct. It can also be used to check history data within last three months. (Only the data pushed by the Custom API can be verified. It is not for the verification of end status notification of call tasks.)
+- Workflow [Stop the Workflow Task](https://api-docs.airudder.com/api-45267515.md): Stop the workflow task.
+- Workflow [Obtain the Workflow Task List](https://api-docs.airudder.com/api-45268459.md): Obtain a list of workflow tasks, in reverse order of creation time.
+- Workflow [Obtain the Subtask List of the Workflow](https://api-docs.airudder.com/api-45275726.md): To obtain the subtask list information of a workflow instance, during the execution of a workflow task, each Action node will generate a subtask. A subtask may generate multiple outbound tasks (note the distinction between subtasks and outbound tasks).
+- Workflow [Obtain the Outbound Task List of Workflow](https://api-docs.airudder.com/api-154087794.md): To obtain the all outbound task list information of a workflow instance, during the execution of a workflow task, each Action node will generate a subtask. A subtask may generate multiple outbound tasks (note the distinction between subtasks and outbound tasks).
+- Workflow [Obtain the Outbound Task Details of Workflow(Collection/Telemarketing/E-commerce)](https://api-docs.airudder.com/api-465777787.md): To retrieve the call details of the phone numbers within an outbound task (task_id), use the API endpoint. This endpoint provides similar information to the ```/service/cloud/detail``` endpoint, but with added workflow-related data: "workflow_id", "workflow_name", "nodetask_id", "nodetask_name", and "case_id". All returned fields have the same meanings as the "Notification of Call Completion in Workflow" description.
+- Workflow [Obtain the Outbound Task Details of Workflow(Info Check)](https://api-docs.airudder.com/api-465777792.md): To retrieve the call details of the phone numbers within an outbound task (task_id), use the API endpoint. This endpoint provides similar information to the ```/service/cloud/ic_detail``` endpoint, but with added workflow-related data: "workflow_id", "workflow_name", "nodetask_id", "nodetask_name", and "case_id". All returned fields have the same meanings as the "Notification of Call Completion in Workflow" description.
+- Workflow [Obtain Call Information and Recording Links by callee/caseid and taskid/workflow_id](https://api-docs.airudder.com/api-178718843.md): Obtain call information and recording links by using callee/caseid and taskid/workflow_id as parameters, Please note that only data from the previous 3 months can be queried.
+- Workflow [Obtian Call Information and Recording Link by Call ID](https://api-docs.airudder.com/api-178718855.md): Obtian phone details and recording link based on the call ID. Only data from the last 3 months can be queried.
+- Workflow [Obtain All the Recordings of a Single Number in the Workflow](https://api-docs.airudder.com/api-45279102.md): Obtain all the recordings of a single number in the workflow.
+- Workflow [Query workflow_id using case_id/callee](https://api-docs.airudder.com/api-154088166.md): 
+- Workflow [Notification for Workflow List Completion](https://api-docs.airudder.com/api-154087917.md): When the list completes its flow within the workflow, notifications will be sent one by one to the configured URL.
+- Workflow [Notification of Workflow Status Change](https://api-docs.airudder.com/api-178704796.md): Notify the integrating party proactively when the workflow status changes to "cancelled" and "finished".
+- Workflow [Obtain the WABA Tasks List of Workflow](https://api-docs.airudder.com/api-236664191.md): Get the list of all WABA tasks generated within the workflow task. During the execution of a workflow task, each WABA Template node may generate multiple WABA tasks.
+- Workflow [Obtain the WABA Task Details of Workflow](https://api-docs.airudder.com/api-236665438.md): Retrieve the list delivery status details of the WABA task based on the WABA task ID.
+- Workflow [Notification of WABA Message Status Alteration in Workflow](https://api-docs.airudder.com/api-286285375.md): Proactively notify the integration party when the WABA message status changes sent from the WABA Template node within the Workflow. Each status change of a WABA message will be notified.
+- Workflow [Chatbot Session End Notification in Workflow](https://api-docs.airudder.com/api-286285407.md): In the Workflow, after sending a message through the WABA Template node, if the customer replies and triggers a Chatbot session bound to that template, when the conversation with the Chatbot ends, the system will proactively send a conversation end notification to the integration party. If the session involves a transfer to a human agent, wait for the transfer to complete and the session to fully end before notifying.
+- Workflow [Obtain SMS message records within the workflow](https://api-docs.airudder.com/api-355460659.md): Obtain the SMS sending details within the workflow.
+- Workflow [Notification of SMS message status change within the workflow.](https://api-docs.airudder.com/api-355460696.md): The SMS messages sent within the workflow will notify the integration party upon status changes and when the short link is clicked.
+- Chatbot > 接入 > Bot接入 [用户发送消息](https://api-docs.airudder.com/api-260593174.md): 收到用户信息接口，对话使用call_id作为唯一标识，同一个渠道同一个用户同一个时间有且仅有一个活跃的对话
+- Chatbot > 接入 > Bot接入 [关闭对话](https://api-docs.airudder.com/api-389739555.md): 用户侧关闭会话
+- Chatbot > 接入 > 自定义人工接管 > 接管流程 [转人工结果](https://api-docs.airudder.com/api-173044447.md): 回复转人工结果接口
+- Chatbot > 接入 > 自定义人工接管 > 坐席会话与消息 [查询会话列表](https://api-docs.airudder.com/api-173046015.md): 拉取最近24小时会话列表，email消息不受24小时限制
+- Chatbot > 接入 > 自定义人工接管 > 坐席会话与消息 [查询消息列表](https://api-docs.airudder.com/api-173073431.md): 拉取会话最近24小时且是callid最后一条消息之前的且消息id小于last_msg_id的消息列表。
+- Chatbot > 接入 > 自定义人工接管 > 坐席会话与消息 [发送普通消息](https://api-docs.airudder.com/api-173441815.md): 
+- Chatbot > 接入 > 自定义人工接管 > 坐席会话与消息 [结束会话](https://api-docs.airudder.com/api-173045452.md): 服务结束后主动关闭会话
+- Chatbot > 接入 > 自定义人工接管 > 坐席会话与消息 [将用户消息标记为已读](https://api-docs.airudder.com/api-181010908.md): 
+- Chatbot > 接入 > 自定义人工接管 > 坐席会话与消息 [重开会话](https://api-docs.airudder.com/api-320431045.md): 坐席重开会话，只有email渠道可用
+- Chatbot > 接入 > Broadcast [查询可用WABA账号](https://api-docs.airudder.com/api-143838636.md): 通过本接口查询公司名下授权到 AI Rudder 的所有 WABA 账号
+- Chatbot > 接入 > Broadcast [查询模版列表](https://api-docs.airudder.com/api-143850570.md): 查询 WABA 账号下的模版列表
+- Chatbot > 接入 > Broadcast [查询模版详情](https://api-docs.airudder.com/api-143866566.md): 查询模版详细信息
+- Chatbot > 接入 > Broadcast [发送模版消息](https://api-docs.airudder.com/api-143868468.md): 发送模版消息
+- Chatbot > 接入 > Broadcast [发送单个模版消息接口](https://api-docs.airudder.com/api-145973213.md): 发送单个模版消息
+- Chatbot > 接入 > Broadcast [查询模版消息发送结果](https://api-docs.airudder.com/api-143871749.md): 
+- Chatbot > 接入 > 会话管理 [结束会话](https://api-docs.airudder.com/api-484866364.md): 在session任何阶段，结束会话
+- Chatbot > 定制 > 华为 > api [用户发送消息](https://api-docs.airudder.com/api-185886081.md): 收到用户信息接口，对话使用call_id作为唯一标识，如果没有传递call_id字段则会创建新的会话并返回
+- Chatbot > 定制 > 华为 > api [转人工结果](https://api-docs.airudder.com/api-185905992.md): 转人工结果接口，转人工后不论成功失败，均会关闭会话
+- Chatbot > 定制 > 华为 > webhook [回调转人工申请](https://api-docs.airudder.com/api-185902469.md): 当机器人决定转人工后，向目标地址发送转人工申请回调
+- Chatbot > 定制 > 华为 > webhook [结束会话](https://api-docs.airudder.com/api-185914815.md): 
+- Chatbot > 定制 > Mandiri > 3dolphin [create token](https://api-docs.airudder.com/api-439148482.md): 
+- Chatbot > 定制 > Mandiri > 3dolphin [outgoing msg](https://api-docs.airudder.com/api-439150753.md): 
+- Chatbot > 定制 > Mandiri > 3dolphin [close session](https://api-docs.airudder.com/api-439166015.md): 
+- Chatbot > 定制 > AICC [获取公司信息](https://api-docs.airudder.com/api-259351251.md): 
+- Chatbot > 定制 > AICC [获取公司名下的渠道绑定关系列表](https://api-docs.airudder.com/api-480951858.md): 
+- Chatbot > 定制 > AICC [回调会话结束事件](https://api-docs.airudder.com/api-252584847.md): 会话结束后上报会话相关消息
+- Chatbot > 定制 > AICC [查询公司所有渠道信息](https://api-docs.airudder.com/api-229813888.md): 拉取会话最近24小时(?)且是callid最后一条消息之前的且消息id小于last_msg_id的消息列表。
+- Chatbot > 定制 > CTOS-CM [用户信息上报](https://api-docs.airudder.com/api-439961606.md): 
+- Chatbot > 定制 > CTOS-CM [获取 token](https://api-docs.airudder.com/api-500881168.md): 
+- Chatbot > 定制 > Omnichannel-待开发 [查询可用WABA账号](https://api-docs.airudder.com/api-407995808.md): 通过本接口查询公司名下授权到 AI Rudder 的所有 WABA 账号
+- Chatbot > 定制 > Omnichannel-待开发 [创建Template](https://api-docs.airudder.com/api-407927102.md): 
+- Chatbot > 定制 > Omnichannel-待开发 [删除Template](https://api-docs.airudder.com/api-407973251.md): 
+- Chatbot > 定制 > Omnichannel-待开发 [查询模版列表](https://api-docs.airudder.com/api-407996008.md): 查询 WABA 账号下的模版列表
+- Chatbot > 定制 > Omnichannel-待开发 [查询模版详情](https://api-docs.airudder.com/api-407996262.md): 查询模版详细信息
+- Chatbot > 定制 > Omnichannel-待开发 [发送模版消息](https://api-docs.airudder.com/api-407996617.md): 发送模版消息
+- Chatbot > 定制 > Omnichannel-待开发 [发送普通消息](https://api-docs.airudder.com/api-408088972.md): 
+- Chatbot > 定制 > Omnichannel-待开发 [回调消息状态变更](https://api-docs.airudder.com/api-408107431.md): 
+- Chatbot > 定制 > Omnichannel-待开发 [回调用户消息](https://api-docs.airudder.com/api-408142466.md): 
+- Chatbot > 定制 > JT [查询运单号物流轨迹](https://api-docs.airudder.com/api-260701956.md): 
+- Chatbot > 回调 > Bot回调 [回调机器人回复消息](https://api-docs.airudder.com/api-260597002.md): 回调机器人回复用户的消息，http 响应码为200则表示成功
+- Chatbot > 回调 > Bot回调 [回调转人工申请](https://api-docs.airudder.com/api-260597030.md): 当机器人决定转人工后，向目标地址发送转人工申请回调
+- Chatbot > 回调 > Bot回调 [回调会话总结](https://api-docs.airudder.com/api-341390162.md): 
+- Chatbot > 回调 > Bot回调 [回调结束会话](https://api-docs.airudder.com/api-260597143.md): 机器人判定会话结束后回调
+- Chatbot > 回调 > 会话/消息事件回调 [回调转人工结果](https://api-docs.airudder.com/api-185895267.md): 转人工成功或失败时上报明确结果，并固定携带关联 broadcast/workflow 信息。webhook
+- Chatbot > 回调 > 会话/消息事件回调 [回调发起转人工通知](https://api-docs.airudder.com/api-177656020.md): 发起转人工时上报转人工开始信息，并固定携带关联 broadcast/workflow 信息。webhook
+- Chatbot > 回调 > 会话/消息事件回调 [会话结束后上报](https://api-docs.airudder.com/api-173045402.md): 会话结束后上报会话相关消息 - webhook
+- Chatbot > 回调 > 会话/消息事件回调 [用户发送的消息事件上报](https://api-docs.airudder.com/api-250536057.md): 
+- Chatbot > 回调 > 会话/消息事件回调 [渠道发送的消息事件上报](https://api-docs.airudder.com/api-250553989.md): 
+- Chatbot > 回调 > 会话/消息事件回调 [渠道发送的消息状态变更事件上报](https://api-docs.airudder.com/api-250558957.md): 
+- Chatbot > 回调 > 会话/消息事件回调 [回调渠道模板消息发送后状态变更](https://api-docs.airudder.com/api-429623504.md): 
+- Chatbot > 回调 > WA/WABA回调 [回调WABA状态变更](https://api-docs.airudder.com/api-408179207.md): 
+- Chatbot > 回调 > WA/WABA回调 [回调phone number质量变更](https://api-docs.airudder.com/api-408115912.md): 
+- Chatbot > 回调 > WA/WABA回调 [回调phone number name变更](https://api-docs.airudder.com/api-408170352.md): 
+- Chatbot > 回调 > Template回调 [回调模版消息状态及计费](https://api-docs.airudder.com/api-391233723.md): 模板消息发送后，状态有变更时即时回调，回调地址由对方提供 - webhook
+- Chatbot > 回调 > Template回调 [回调Template质量变更](https://api-docs.airudder.com/api-408116012.md): 
+- Chatbot > 回调 > Template回调 [回调Template状态变更](https://api-docs.airudder.com/api-408177359.md): 
+- Chatbot > 文件和媒体 [上传文件](https://api-docs.airudder.com/api-179484109.md): 
+- Chatbot > 文件和媒体 [上传文件(谷歌地图缩略图)](https://api-docs.airudder.com/api-182910612.md): 
+- Chatbot English > Integration > Bot Integration [User send message](https://api-docs.airudder.com/api-260842989.md): The interface for receiving user information uses call_id as a unique identifier. For the same channel, the same user, and the same time, there is only one active conversation.
+- Chatbot English > Integration > Bot Integration [Close session](https://api-docs.airudder.com/api-477530172.md): 
+- Chatbot English > Integration > Custom Human Handoff > Handoff Flow [Agent transfer result](https://api-docs.airudder.com/api-196333832.md): Agent transfer result reply
+- Chatbot English > Integration > Custom Human Handoff > Agent Conversation & Messages [Query conversation list](https://api-docs.airudder.com/api-196350623.md): Query the conversation list from the last 24 hours
+- Chatbot English > Integration > Custom Human Handoff > Agent Conversation & Messages [Query message list](https://api-docs.airudder.com/api-253874171.md): Query the message list from the last 24 hours of the conversation, where the messages are before the last message of the specified call_id and have a message_id smaller than last_msg_id
+- Chatbot English > Integration > Custom Human Handoff > Agent Conversation & Messages [Send regular message](https://api-docs.airudder.com/api-196446473.md): Send a regular, non-template message
+- Chatbot English > Integration > Custom Human Handoff > Agent Conversation & Messages [Mark user message as read](https://api-docs.airudder.com/api-196437976.md): 
+- Chatbot English > Integration > Custom Human Handoff > Agent Conversation & Messages [End session](https://api-docs.airudder.com/api-196456465.md): Close the session once service ends
+- Chatbot English > Integration > Custom Human Handoff > Agent Conversation & Messages [reopen session](https://api-docs.airudder.com/api-487381236.md): 坐席重开会话，只有email渠道可用
+- Chatbot English > Integration > Broadcast [Query available WABA accounts](https://api-docs.airudder.com/api-144890829.md): Use this interface to query all WABA accounts authorized to AI Rudder.
+- Chatbot English > Integration > Broadcast [Query template list](https://api-docs.airudder.com/api-144890836.md): Query the template list under the WABA account.
+- Chatbot English > Integration > Broadcast [Query Template details](https://api-docs.airudder.com/api-144890837.md): Query template details
+- Chatbot English > Integration > Broadcast [Send template message](https://api-docs.airudder.com/api-144890838.md): For sending template message to targets.
+- Chatbot English > Integration > Broadcast [Send single template message](https://api-docs.airudder.com/api-195842051.md): Send single template message
+- Chatbot English > Integration > Broadcast [Query the template message sending result](https://api-docs.airudder.com/api-144890839.md): 
+- Chatbot English > Integration > Session Management [Terminate session](https://api-docs.airudder.com/api-485122088.md): Terminate session in any status
+- Chatbot English > Customization > AICC [Callback for session end event](https://api-docs.airudder.com/api-253865520.md): Report session-related messages after the session ends
+- Chatbot English > Customization > AICC [Callback status change after the message is sent](https://api-docs.airudder.com/api-196320663.md): 
+- Chatbot English > Customization > CTOS-CM [Upload User Info](https://api-docs.airudder.com/api-440054701.md): 
+- Chatbot English > Customization > CTOS-CM [Get token](https://api-docs.airudder.com/api-500881360.md): 
+- Chatbot English > Customization > Omnichannel - To Be Developed [Query available WABA accounts](https://api-docs.airudder.com/api-408199880.md): Query all WABA accounts authorized to AI Rudder under the company's name through this API
+- Chatbot English > Customization > Omnichannel - To Be Developed [Create Template](https://api-docs.airudder.com/api-408199881.md): 
+- Chatbot English > Customization > Omnichannel - To Be Developed [Delete Template](https://api-docs.airudder.com/api-408199882.md): 
+- Chatbot English > Customization > Omnichannel - To Be Developed [Query Template List](https://api-docs.airudder.com/api-408199883.md): Query the template list under the WABA account
+- Chatbot English > Customization > Omnichannel - To Be Developed [Query Template Details](https://api-docs.airudder.com/api-408199884.md): 查询模版详细信息
+- Chatbot English > Customization > Omnichannel - To Be Developed [Send Template Message](https://api-docs.airudder.com/api-408199885.md): Send Template Message
+- Chatbot English > Customization > Omnichannel - To Be Developed [Send Message](https://api-docs.airudder.com/api-408199886.md): 
+- Chatbot English > Customization > Omnichannel - To Be Developed [Callback message status change](https://api-docs.airudder.com/api-408199887.md): 
+- Chatbot English > Customization > Omnichannel - To Be Developed [Callback user message](https://api-docs.airudder.com/api-408199888.md): 
+- Chatbot English > Customization > JT-BR [Callback template message sending result](https://api-docs.airudder.com/api-196896693.md): 【Customized for Brazil】A callback will be made 1 hour after each template task is completed. The callback address is provided by the other party
+- Chatbot English > Customization > HSB [Callback single template message user response](https://api-docs.airudder.com/api-196230392.md): Callback a single template message after user reply (custom is configured with reply_url)
+- Chatbot English > Customization > Custom agent [Callback for status change after the agent message is sent](https://api-docs.airudder.com/api-253873966.md): 
+- Chatbot English > Customization > Custom agent [Callback for messages sent by the user after transferring to agent](https://api-docs.airudder.com/api-253874080.md): Callback the message to the target address after the user sends a message to the channel
+- Chatbot English > Webhooks > Bot webhooks [Callback bot reply message](https://api-docs.airudder.com/api-260826446.md): Callback the bot’s reply to the user. An HTTP response code of 200 indicates success.
+- Chatbot English > Webhooks > Bot webhooks [Callback transfer to agent request](https://api-docs.airudder.com/api-260807624.md): When the bot decides to transfer to a human agent, it sends a transfer request callback to the target address.
+- Chatbot English > Webhooks > Bot webhooks [Callback for ended session](https://api-docs.airudder.com/api-260808260.md): Callback after the bot determines the session has ended.
+- Chatbot English > Webhooks > Bot webhooks [Call for session summary](https://api-docs.airudder.com/api-477530163.md): 
+- Chatbot English > Webhooks > Conversation/Message event webhooks [Report after session ends](https://api-docs.airudder.com/api-196458301.md): Report conversation-related messages after session ends
+- Chatbot English > Webhooks > Conversation/Message event webhooks [Transfer Started Webhook](https://api-docs.airudder.com/api-480664418.md): Reports transfer-to-agent start information when a session starts transfer-to-agent, and always includes related broadcast/workflow information.
+- Chatbot English > Webhooks > Conversation/Message event webhooks [Transfer Result Webhook](https://api-docs.airudder.com/api-173441967.md): Reports the final transfer-to-agent result when transfer succeeds or fails, and always includes related broadcast/workflow information.
+- Chatbot English > Webhooks > Conversation/Message event webhooks [User Send Message Webhook](https://api-docs.airudder.com/api-492084310.md): 
+- Chatbot English > Webhooks > Conversation/Message event webhooks [Channel Send Message Webhook](https://api-docs.airudder.com/api-492092656.md): 
+- Chatbot English > Webhooks > Conversation/Message event webhooks [Channel Send Message Status Change Webhook](https://api-docs.airudder.com/api-492121094.md): 
+- Chatbot English > Webhooks > Conversation/Message event webhooks [Channel Send Template Message Status Change Webhook](https://api-docs.airudder.com/api-492122218.md): 
+- Chatbot English > Webhooks > WA/WABA webhooks [Callback for WABA Status Change](https://api-docs.airudder.com/api-408199889.md): 
+- Chatbot English > Webhooks > WA/WABA webhooks [Callback phone number quality change](https://api-docs.airudder.com/api-408199890.md): 
+- Chatbot English > Webhooks > WA/WABA webhooks [Callback phone number name change](https://api-docs.airudder.com/api-408199891.md): 
+- Chatbot English > Webhooks > Template webhooks [Callback WABA Template Message Status & Billing](https://api-docs.airudder.com/api-393424178.md): Once the template message is sent, status changes are pushed in real time via callback to a URL provided by the recipient.
+- Chatbot English > Webhooks > Template webhooks [Callback Template Quality Change](https://api-docs.airudder.com/api-408199892.md): 
+- Chatbot English > Webhooks > Template webhooks [Callback Template Status Change](https://api-docs.airudder.com/api-408199893.md): 
+- Chatbot English > Files & Media [Upload file](https://api-docs.airudder.com/api-196457416.md): 
+- Chatbot English > Files & Media [Upload file (Google maps thumbnail)](https://api-docs.airudder.com/api-196457890.md): 
+- 呼入机器人业务 [验证并获取令牌](https://api-docs.airudder.com/api-334041592.md): 获取令牌并将其添加到其他API的请求header中， 令牌的有效时间为24小时。
+- 呼入机器人业务 [根据callid获取通话信息和录音链接](https://api-docs.airudder.com/api-334042177.md): 根据callid获取通话详情和录音链接，仅支持查询最近3个月的数据
+- 呼入机器人业务 [转人工成功后通知 v2](https://api-docs.airudder.com/api-380920967.md): 转人工成功后，主动通知对接方这通电话的拨打数据（适用于机器人转人工坐席后电话在voip层面没有挂断，直到人工坐席通话结束的场景，对接方可在收到数据后将人机对话信息展示在对接方系统中。）
+- 呼入机器人业务 [电话结束后通知 v2](https://api-docs.airudder.com/api-380928081.md): 整通电话结束时，主动通知对接方这通电话的拨打数据（适用于机器人发起转人工后电话在voip层面已挂断的场景，对接方可在收到数据后将人机对话信息展示在对接方系统中。）
+- 呼入机器人业务 [查询统计数据](https://api-docs.airudder.com/api-375441208.md): 查询AIRUDDER网页版数据看板页面的所有统计数据。
+- 呼入机器人业务 [转人工成功后通知](https://api-docs.airudder.com/api-153622089.md): 转人工成功后，主动通知对接方这通电话的拨打数据（适用于机器人转人工坐席后电话在voip层面没有挂断，直到人工坐席通话结束的场景，对接方可在收到数据后将人机对话信息展示在对接方系统中。）
+- 呼入机器人业务 [电话结束后通知](https://api-docs.airudder.com/api-153622187.md): 整通电话结束时，主动通知对接方这通电话的拨打数据（适用于机器人发起转人工后电话在voip层面已挂断的场景，对接方可在收到数据后将人机对话信息展示在对接方系统中。）
+- Inbound [Token Authentication and Obtain](https://api-docs.airudder.com/api-334041765.md): Get token and add it to request header for other API. Token will be expired after 24 hours. If you applied again within validation period, the original token will be expired after another 24 hours.
+- Inbound [Obtain Call Information and Recording Link by Callid](https://api-docs.airudder.com/api-427064055.md): Retrieve call details and recording links based on callid, only supporting queries for data from the last 3 months.
+- Inbound [Notification after Successful Transfer to an Agent v2](https://api-docs.airudder.com/api-427064062.md): After successfully transferring to a human agent, proactively notify the integrating party of the call data for this call (applicable to scenarios where the call does not hang up at the VoIP level after the robot transfers to a human agent seat, until the human agent call ends. The integrating party can display the human-machine conversation information in the integrating party's system after receiving the data.) 
+- Inbound [Notification after the Call Ends v2](https://api-docs.airudder.com/api-427064074.md): At the end of the entire call, proactively notify the integrating party of the call data for this call (applicable to scenarios where the call has been hung up at the voip level after the robot initiates the transfer to human, and the integrating party can display the human-machine conversation information in the integrating party's system after receiving the data). 
+- Inbound [Query Statistical Data](https://api-docs.airudder.com/api-427064108.md): Query all statistical data on the AIRUDDER website.
+- Inbound [Notification after Successful Transfer to an Agent](https://api-docs.airudder.com/api-146717085.md): After successfully transferring to a human agent,  (applicable in scenarios where the call remains active at the VOIP level until the human conversation ends), we will proactively notify the integration party with the call data. The integration party can display the human-robot conversation information in their system upon receiving the data.
+- Inbound [Notification after the Call Ends](https://api-docs.airudder.com/api-146773611.md): Upon the completion of the entire call, we will proactively notify the integration party with the call data. This applies to scenarios where the robot initiates the transfer to a human agent, and the call has already been terminated at the VOIP level. The integration party can display the human-robot conversation information in their system upon receiving the data.
+
+## Schemas
+- 英语 [WABA message status](https://api-docs.airudder.com/schema-161429840.md): 
+- 英语 [hang up by](https://api-docs.airudder.com/schema-238521399.md): 
+- 英语 [transfer status](https://api-docs.airudder.com/schema-238598768.md): 
+- 英语 [reason code](https://api-docs.airudder.com/schema-238598776.md): 
+- 中文 [ring type](https://api-docs.airudder.com/schema-26550104.md): 
+- 中文 [hang up type](https://api-docs.airudder.com/schema-26550120.md): 
+- 中文 [task status](https://api-docs.airudder.com/schema-26550129.md): 
+- 中文 [call status](https://api-docs.airudder.com/schema-26550139.md): 
+- 中文 [plan status](https://api-docs.airudder.com/schema-84283613.md): 
+- 中文 [Intention](https://api-docs.airudder.com/schema-28027334.md): 
+- 中文 [question answer](https://api-docs.airudder.com/schema-240356966.md): 
+- [http code](https://api-docs.airudder.com/schema-21123196.md): 
+- [hang up type](https://api-docs.airudder.com/schema-21517837.md): 
+- [WABA message status](https://api-docs.airudder.com/schema-161429801.md): 
+- [ring type](https://api-docs.airudder.com/schema-21517512.md): 
+- [hang up by](https://api-docs.airudder.com/schema-238519593.md): 
+- [call status](https://api-docs.airudder.com/schema-21517083.md): 
+- [transfer status](https://api-docs.airudder.com/schema-238565304.md): 
+- [Intention](https://api-docs.airudder.com/schema-21516666.md): 
+- [reason code](https://api-docs.airudder.com/schema-238598046.md): 
+- [plan status](https://api-docs.airudder.com/schema-21379814.md): 
+- [task status](https://api-docs.airudder.com/schema-21379685.md): 
+- [TaskID](https://api-docs.airudder.com/schema-21316018.md): 
+- [error code](https://api-docs.airudder.com/schema-21315250.md): 
+- [question answer](https://api-docs.airudder.com/schema-156084069.md): 
+- [strategy model](https://api-docs.airudder.com/schema-21120771.md): 
+- [gender](https://api-docs.airudder.com/schema-21314718.md): 
+- [date_format](https://api-docs.airudder.com/schema-21314738.md): 
+- [ring type1](https://api-docs.airudder.com/schema-278941634.md): 
+- [hang up type2](https://api-docs.airudder.com/schema-278941635.md): 
+- [task status3](https://api-docs.airudder.com/schema-278941636.md): 
+- [call status4](https://api-docs.airudder.com/schema-278941637.md): 
+- [plan status5](https://api-docs.airudder.com/schema-278941638.md): 
+- [Intention6](https://api-docs.airudder.com/schema-278941639.md): 
+- [WABA message status7](https://api-docs.airudder.com/schema-278941640.md): 
+- [sender type](https://api-docs.airudder.com/schema-161686221.md): 
+- [hang up by8](https://api-docs.airudder.com/schema-278941641.md): 
+- [transfer status9](https://api-docs.airudder.com/schema-278941642.md): 
+- [reason code10](https://api-docs.airudder.com/schema-278941643.md): 
+- [question answer11](https://api-docs.airudder.com/schema-278941644.md): 
+- [question status](https://api-docs.airudder.com/schema-41899712.md): 
+- [whether answer](https://api-docs.airudder.com/schema-156076200.md): 
+- [question type](https://api-docs.airudder.com/schema-156079356.md): 

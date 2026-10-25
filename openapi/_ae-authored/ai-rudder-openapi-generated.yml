@@ -1,0 +1,1152 @@
+openapi: 3.1.0
+info:
+  title: AI Rudder API
+  version: '2026-10-25'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-25: 19 operation(s) read from 22 public documentation page(s) (each
+    operation names its page in x-source). This is not the provider''s published contract; AI Rudder has published no machine-readable contract
+    that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 19
+    documentation: 0
+    pages-with-code: 22
+    pages-read: 22
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-25'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://api-docs.airudder.com/api-44712004
+  - https://api-docs.airudder.com/api-45099127
+  - https://api-docs.airudder.com/api-45099370
+  - https://api-docs.airudder.com/api-45101013
+  - https://api-docs.airudder.com/api-45102695
+  - https://api-docs.airudder.com/api-45102909
+  - https://api-docs.airudder.com/api-45194593
+  - https://api-docs.airudder.com/api-45197411
+  - https://api-docs.airudder.com/api-45201678
+  - https://api-docs.airudder.com/api-45229623
+  - https://api-docs.airudder.com/api-45244680
+  - https://api-docs.airudder.com/api-45246261
+  - https://api-docs.airudder.com/api-45246616
+  - https://api-docs.airudder.com/api-45267515
+  - https://api-docs.airudder.com/api-45268459
+  - https://api-docs.airudder.com/api-45275726
+  - https://api-docs.airudder.com/api-45279102
+  - https://api-docs.airudder.com/api-45285904
+  - https://api-docs.airudder.com/api-45285961
+  - https://api-docs.airudder.com/api-45287767
+  - https://api-docs.airudder.com/api-45288718
+  - https://api-docs.airudder.com/api-45288825
+servers:
+- url: https://api.airudder.com
+paths:
+  /service/cloud/auth:
+    post:
+      operationId: post_service_cloud_auth
+      tags:
+      - Service
+      summary: POST /service/cloud/auth
+      x-source: https://api-docs.airudder.com/api-44712004
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostServiceCloudAuthRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostServiceCloudAuthResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/auth'  --header 'User-Agent:\
+          \ AIRUDDER'  --header 'Content-Type: application/json'  --data '{\n \"APPKey\": \"YK/9/KasbUt0hAod6W5HEg\",\n \"APPSecret\": \"l5uzAdirgEduBNQXOfec7w\"\
+          \n}' 返回响应 \U0001F7E2 200 success application/json 生成代码 Body application/json 生成代码 示例 { \n \"data\" : { \n \"token\" : \"3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLt"
+  /service/cloud/cancelphonecall:
+    post:
+      operationId: post_service_cloud_cancelphonecall
+      tags:
+      - Service
+      summary: POST /service/cloud/cancelphonecall
+      x-source: https://api-docs.airudder.com/api-45102909
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostServiceCloudCancelphonecallRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostServiceCloudCancelphonecallResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/cancelphonecall'  --header\
+          \ 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'  --header\
+          \ 'Content-Type: application/json'  --data '{\n \"CalleeNumber\": \"+8610087\",\n \"TaskID\": \"85b1e15069cd564bf4ba08ae10001\"\n}'\
+          \ 返回响应 \U0001F7E2 200 success applica"
+  /service/cloud/case:
+    get:
+      operationId: get_service_cloud_case
+      tags:
+      - Service
+      summary: GET /service/cloud/case
+      x-source: https://api-docs.airudder.com/api-45102695
+      parameters:
+      - name: Callee
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: TaskID
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceCloudCaseResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl cURL-Windows Httpie wget PowerShell curl --location ''https://api.airudder.com/service/cloud/case?TaskID=137f31b04d60a27b7557be82402a1001&Callee=+621234456''  --header
+          ''Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU''  --header ''User-Agent: AIRUDDER''  --header
+          ''Content-Type: application/json'' 返回响应 🟢 200 success application/json 生成代码 Body application/json 生成'
+  /service/cloud/iasklist:
+    get:
+      operationId: get_service_cloud_iasklist
+      tags:
+      - Service
+      summary: GET /service/cloud/iasklist
+      x-source: https://api-docs.airudder.com/api-45285961
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceCloudIasklistResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/iasklist?page=undefined'  --header\
+          \ 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'  --header\
+          \ 'Content-Type: application/json' 返回响应 \U0001F7E2 200 Success application/json 生成代码 Body application/json 生成代码 示例 { \n \"data\" : {\
+          \ \n \"total\" : 2288 ,"
+  /service/cloud/ic_detail:
+    get:
+      operationId: get_service_cloud_ic_detail
+      tags:
+      - Service
+      summary: GET /service/cloud/ic_detail
+      x-source: https://api-docs.airudder.com/api-45287767
+      parameters:
+      - name: task_id
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceCloudIcDetailResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/ic_detail?task_id=undefined'\
+          \  --header 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'\
+          \  --header 'Content-Type: application/json' 返回响应 \U0001F7E2 200 Success application/json 生成代码 Body application/json 生成代码 示例 { \n \"\
+          data\" : { \n \"task_id\" : "
+  /service/cloud/list:
+    get:
+      operationId: get_service_cloud_list
+      tags:
+      - Service
+      summary: GET /service/cloud/list
+      x-source: https://api-docs.airudder.com/api-45099370
+      parameters:
+      - name: EndTime
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: Number
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: Page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: "StartTime\t"
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: "Type\t"
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceCloudListResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl cURL-Windows Httpie wget PowerShell curl --location ''https://api.airudder.com/service/cloud/list?Number=10&Page=1&Type%09=normal&StartTime%09=2022-10-25%2010%3A00%3A00&EndTime=2022-10-26%2010%3A00%3A00''  --header
+          ''Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU''  --header ''User-Agent: AIRUDDER''  --header
+          ''Content-Type: application/json'' 返回响应 🟢 200 success'
+  /service/cloud/operation:
+    post:
+      operationId: post_service_cloud_operation
+      tags:
+      - Service
+      summary: POST /service/cloud/operation
+      x-source: https://api-docs.airudder.com/api-45099127
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostServiceCloudOperationRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostServiceCloudOperationResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/operation'  --header 'Authorization:\
+          \ Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'  --header 'Content-Type:\
+          \ application/json'  --data '{\n \"Action\": \"Stop\",\n \"TaskID\": \"83c2bb5db3c367319551694583f17d3f\"\n}' 返回响应 \U0001F7E2 200 success\
+          \ application/json 生成代"
+  /service/cloud/plancancelphonecall:
+    post:
+      operationId: post_service_cloud_plancancelphonecall
+      tags:
+      - Service
+      summary: POST /service/cloud/plancancelphonecall
+      x-source: https://api-docs.airudder.com/api-45197411
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostServiceCloudPlancancelphonecallRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostServiceCloudPlancancelphonecallResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/plancancelphonecall'  --header\
+          \ 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'  --header\
+          \ 'Content-Type: application/json'  --data '{\n \"CalleeNumber\": \"+8618612345678\",\n \"PlanName\": \"my_plan_03\"\n}' 返回响应 \U0001F7E2\
+          \ 200 success application/js"
+  /service/cloud/planstatus:
+    get:
+      operationId: get_service_cloud_planstatus
+      tags:
+      - Service
+      summary: GET /service/cloud/planstatus
+      x-source: https://api-docs.airudder.com/api-45201678
+      parameters:
+      - name: PlanName
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceCloudPlanstatusResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/planstatus?PlanName=undefined'\
+          \  --header 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'\
+          \  --header 'Content-Type: application/json' 返回响应 \U0001F7E2 200 success application/json 生成代码 Body application/json 生成代码 示例 { \n \"\
+          data\" : { \n \"PlanName\""
+  /service/cloud/recording:
+    get:
+      operationId: get_service_cloud_recording
+      tags:
+      - Service
+      summary: GET /service/cloud/recording
+      x-source: https://api-docs.airudder.com/api-45101013
+      parameters:
+      - name: TaskID
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceCloudRecordingResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/recording?TaskID=137f31b04d60a27b7557be10001'\
+          \  --header 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'\
+          \  --header 'Content-Type: application/json' 返回响应 \U0001F7E2 200 成功 application/json 生成代码 Body application/json 生成代码 示例 { \n \"data\"\
+          \ : { \n "
+  /service/cloud/strategy:
+    get:
+      operationId: get_service_cloud_strategy
+      tags:
+      - Service
+      summary: GET /service/cloud/strategy
+      x-source: https://api-docs.airudder.com/api-45194593
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceCloudStrategyResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/strategy'  --header 'Authorization:\
+          \ Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'  --header 'Content-Type:\
+          \ application/json' 返回响应 \U0001F7E2 200 success application/json 生成代码 Body application/json 生成代码 示例 { \n \"data\" : [ \n { \n \"StrategyId\"\
+          \ : 336 , \n \"Str"
+  /service/cloud/workflow/calleecases:
+    get:
+      operationId: get_service_cloud_workflow_calleecases
+      tags:
+      - Service
+      summary: GET /service/cloud/workflow/calleecases
+      x-source: https://api-docs.airudder.com/api-45279102
+      parameters:
+      - name: callee
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: workflow_id
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceCloudWorkflowCalleecasesResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl cURL-Windows Httpie wget PowerShell curl --location ''https://api.airudder.com/service/cloud/workflow/calleecases?workflow_id=92f9acb954e2410000011&callee=+6212345678''  --header
+          ''Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU''  --header ''User-Agent: AIRUDDER''  --header
+          ''Content-Type: application/json'' 返回响应 🟢 200 success application/json 生成代码 Body applicat'
+  /service/cloud/workflow/cancelphonecall:
+    post:
+      operationId: post_service_cloud_workflow_cancelphonecall
+      tags:
+      - Service
+      summary: POST /service/cloud/workflow/cancelphonecall
+      x-source: https://api-docs.airudder.com/api-45246616
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostServiceCloudWorkflowCancelphonecallRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostServiceCloudWorkflowCancelphonecallResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/workflow/cancelphonecall' \
+          \ --header 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'\
+          \  --header 'Content-Type: application/json'  --data '{\n \"workflow_id\": \"441523302d2f44f7b3fe000000\",\n \"caseid\":\"test-caseid-1\"\
+          ,\n \"callee\": \"+861234"
+  /service/cloud/workflow/instancelist:
+    get:
+      operationId: get_service_cloud_workflow_instancelist
+      tags:
+      - Service
+      summary: GET /service/cloud/workflow/instancelist
+      x-source: https://api-docs.airudder.com/api-45268459
+      parameters:
+      - name: end_time
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: start_time
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceCloudWorkflowInstancelistResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl cURL-Windows Httpie wget PowerShell curl --location ''https://api.airudder.com/service/cloud/workflow/instancelist?page=1&size=10&start_time=2022-09-27T07%3A58%3A31Z&end_time=2022-10-27T07%3A58%3A31Z''  --header
+          ''Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU''  --header ''User-Agent: AIRUDDER''  --header
+          ''Content-Type: application/json'' 返回响应 🟢 200 success ap'
+  /service/cloud/workflow/nodetasklist:
+    get:
+      operationId: get_service_cloud_workflow_nodetasklist
+      tags:
+      - Service
+      summary: GET /service/cloud/workflow/nodetasklist
+      x-source: https://api-docs.airudder.com/api-45275726
+      parameters:
+      - name: workflow_id
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceCloudWorkflowNodetasklistResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/workflow/nodetasklist?workflow_id=92f9acb954e10000011'\
+          \  --header 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'\
+          \  --header 'Content-Type: application/json' 返回响应 \U0001F7E2 200 success application/json 生成代码 Body application/json 生成代码 示例 { \n"
+  /service/cloud/workflow/stopinstance:
+    post:
+      operationId: post_service_cloud_workflow_stopinstance
+      tags:
+      - Service
+      summary: POST /service/cloud/workflow/stopinstance
+      x-source: https://api-docs.airudder.com/api-45267515
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostServiceCloudWorkflowStopinstanceRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostServiceCloudWorkflowStopinstanceResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/workflow/stopinstance'  --header\
+          \ 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'  --header\
+          \ 'Content-Type: application/json'  --data '{\n \"workflow_id\": \"1cfed585e3214100001a129d09\"\n}' 返回响应 \U0001F7E2 200 success application/json\
+          \ 生成代码 Body a"
+  /service/cloud/workflow/templatelist:
+    get:
+      operationId: get_service_cloud_workflow_templatelist
+      tags:
+      - Service
+      summary: GET /service/cloud/workflow/templatelist
+      x-source: https://api-docs.airudder.com/api-45229623
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetServiceCloudWorkflowTemplatelistResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/workflow/templatelist'  --header\
+          \ 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'  --header\
+          \ 'Content-Type: application/json' 返回响应 \U0001F7E2 200 success application/json 生成代码 Body application/json 生成代码 示例 { \n \"data\" : {\
+          \ \n \"lists\" : [ \n { \n "
+  /service/cloud/workflow/updatedetails:
+    post:
+      operationId: post_service_cloud_workflow_updatedetails
+      tags:
+      - Service
+      summary: POST /service/cloud/workflow/updatedetails
+      x-source: https://api-docs.airudder.com/api-45246261
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostServiceCloudWorkflowUpdatedetailsRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostServiceCloudWorkflowUpdatedetailsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/workflow/updatedetails'  --header\
+          \ 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'  --header\
+          \ 'Content-Type: application/json'  --data '{\n \"workflow_id\": \"fb5124e5a8a447d59551b7b10001\",\n \"details\": [\n {\n \"callee\"\
+          : \"+6212345667\",\n \"p"
+  /service/cloud/workflow/uploaddetails:
+    post:
+      operationId: post_service_cloud_workflow_uploaddetails
+      tags:
+      - Service
+      summary: POST /service/cloud/workflow/uploaddetails
+      x-source: https://api-docs.airudder.com/api-45244680
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostServiceCloudWorkflowUploaddetailsRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostServiceCloudWorkflowUploaddetailsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl cURL-Windows Httpie wget PowerShell curl --location 'https://api.airudder.com/service/cloud/workflow/uploaddetails'  --header\
+          \ 'Authorization: Token 3Ksb9EkFDQHBhAbvYDTq4+pGGjNRAuLtPF9MMt9E97hX+OgLWTmeZtdGZyjR+YqU'  --header 'User-Agent: AIRUDDER'  --header\
+          \ 'Content-Type: application/json'  --data '{\n \"workflow_id\": \"e958b74daf3e4c1c9e438d82db4c9999\",\n \"details\": [\n {\n \"variables\"\
+          : {\n \"custome"
+components:
+  schemas:
+    PostServiceCloudAuthRequest:
+      type: object
+      properties:
+        APPKey:
+          type: string
+        APPSecret:
+          type: string
+    PostServiceCloudAuthResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            token:
+              type: string
+        status:
+          type: string
+        code:
+          type: integer
+    PostServiceCloudCancelphonecallRequest:
+      type: object
+      properties:
+        CalleeNumber:
+          type: string
+        TaskID:
+          type: string
+    PostServiceCloudCancelphonecallResponse:
+      type: object
+      properties:
+        data:
+          type: object
+        status:
+          type: string
+        code:
+          type: integer
+    GetServiceCloudCaseResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            link:
+              type: string
+        status:
+          type: string
+        code:
+          type: integer
+    GetServiceCloudIasklistResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            total:
+              type: integer
+            count:
+              type: integer
+            list:
+              type: array
+              items:
+                type: object
+                properties:
+                  task_id:
+                    type: string
+                  task_name:
+                    type: string
+                  status:
+                    type: string
+                  created_at:
+                    type: string
+                    format: date-time
+            status:
+              type: string
+            code:
+              type: integer
+    GetServiceCloudIcDetailResponse:
+      type: object
+      properties:
+        task_id:
+          type: string
+        task_name:
+          type: string
+        status:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        repeat_interval:
+          type: integer
+        repeat_number:
+          type: integer
+        robot_hash:
+          type: string
+        robot_method:
+          type: string
+        sip_line:
+          type: string
+        schedule_start_time:
+          type: string
+          format: date-time
+        schedule_end_time:
+          type: string
+          format: date-time
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              callee:
+                type: string
+              result:
+                type: string
+              result_label:
+                type: string
+              intention_description:
+                type: string
+              duration:
+                type: integer
+              hangup_type:
+                type: string
+              ring_type:
+                type: string
+              question_answer:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    question_name:
+                      type: string
+                    answer:
+                      type: string
+                    answer_text:
+                      type: string
+                    status:
+                      type: string
+                    answer_text_slot:
+                      type: string
+                    var:
+                      type: string
+                    verification_results:
+                      type: string
+                    question_content:
+                      type: string
+                    question_type:
+                      type: string
+                    whether_answer:
+                      type: string
+              EventLabel:
+                type: object
+                properties:
+                  VerifyPass:
+                    type: string
+              NerSlots:
+                type: object
+                properties:
+                  PaymentMethod:
+                    type: string
+                  PaymentTime:
+                    type: string
+              variables:
+                type: object
+                properties:
+                  creditnumber:
+                    type: string
+                  var2:
+                    type: string
+                  birthday:
+                    type: string
+              robot_hash:
+                type: string
+              call_id:
+                type: string
+              call_times:
+                type: integer
+              call_start_time:
+                type: string
+                format: date-time
+              call_end_time:
+                type: string
+                format: date-time
+              ring_time:
+                type: integer
+              talk_round:
+                type: integer
+              redail_call:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    call_id:
+                      type: string
+                    call_start_time:
+                      type: string
+                      format: date-time
+                    ring_type:
+                      type: string
+                    ring_time:
+                      type: integer
+                    hangup_type:
+                      type: string
+                    result_label:
+                      type: string
+                    callee_number:
+                      type: string
+                    caller_number:
+                      type: string
+              caller_number:
+                type: string
+    GetServiceCloudListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              TaskName:
+                type: string
+              TaskID:
+                type: string
+              Status:
+                type: string
+        status:
+          type: string
+        code:
+          type: integer
+    PostServiceCloudOperationRequest:
+      type: object
+      properties:
+        Action:
+          type: string
+        TaskID:
+          type: string
+    PostServiceCloudOperationResponse:
+      type: object
+      properties:
+        data:
+          type: object
+        status:
+          type: string
+        code:
+          type: integer
+    PostServiceCloudPlancancelphonecallRequest:
+      type: object
+      properties:
+        CalleeNumber:
+          type: string
+        PlanName:
+          type: string
+    PostServiceCloudPlancancelphonecallResponse:
+      type: object
+      properties:
+        data:
+          type: object
+        status:
+          type: string
+        code:
+          type: integer
+    GetServiceCloudPlanstatusResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            PlanName:
+              type: string
+            PlanStatus:
+              type: string
+        status:
+          type: string
+        code:
+          type: integer
+    GetServiceCloudRecordingResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            status:
+              type: string
+            link:
+              type: string
+        status:
+          type: string
+        code:
+          type: integer
+    GetServiceCloudStrategyResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              StrategyId:
+                type: integer
+              StrategyName:
+                type: string
+              Rounds:
+                type: integer
+              Version:
+                type: integer
+        status:
+          type: string
+        code:
+          type: integer
+    GetServiceCloudWorkflowCalleecasesResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            lists:
+              type: array
+              items:
+                type: object
+                properties:
+                  nodetask_name:
+                    type: string
+                  nodetask_id:
+                    type: string
+                  callid:
+                    type: string
+                  link:
+                    type: string
+        status:
+          type: string
+        code:
+          type: integer
+    PostServiceCloudWorkflowCancelphonecallRequest:
+      type: object
+      properties:
+        workflow_id:
+          type: string
+        caseid:
+          type: string
+        callee:
+          type: string
+    PostServiceCloudWorkflowCancelphonecallResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            caseid:
+              type: string
+            count:
+              type: integer
+        status:
+          type: string
+        code:
+          type: integer
+    GetServiceCloudWorkflowInstancelistResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            lists:
+              type: array
+              items:
+                type: object
+                properties:
+                  workflow_id:
+                    type: string
+                  name:
+                    type: string
+                  template_name:
+                    type: string
+                  start_time:
+                    type: string
+                    format: date-time
+                  end_time:
+                    type: string
+                    format: date-time
+                  total:
+                    type: integer
+                  status:
+                    type: string
+                  create_time:
+                    type: string
+                    format: date-time
+            count:
+              type: integer
+        status:
+          type: string
+        code:
+          type: integer
+    GetServiceCloudWorkflowNodetasklistResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            lists:
+              type: array
+              items:
+                type: object
+                properties:
+                  nodetask_id:
+                    type: string
+                  nodetask_name:
+                    type: string
+                  type:
+                    type: string
+                  start_time:
+                    type: string
+                    format: date-time
+                  end_time:
+                    type: string
+                    format: date-time
+                  total:
+                    type: integer
+        status:
+          type: string
+        code:
+          type: integer
+    PostServiceCloudWorkflowStopinstanceRequest:
+      type: object
+      properties:
+        workflow_id:
+          type: string
+    PostServiceCloudWorkflowStopinstanceResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            ' workflow_id ':
+              type: string
+        status:
+          type: string
+        code:
+          type: integer
+    GetServiceCloudWorkflowTemplatelistResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            lists:
+              type: array
+              items:
+                type: object
+                properties:
+                  workflow_template_id:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  status:
+                    type: string
+                  create_time:
+                    type: string
+                    format: date-time
+                  update_time:
+                    type: string
+                    format: date-time
+            count:
+              type: integer
+        status:
+          type: string
+        code:
+          type: integer
+    PostServiceCloudWorkflowUpdatedetailsRequest:
+      type: object
+      properties:
+        workflow_id:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              callee:
+                type: string
+              platform:
+                type: string
+              variables:
+                type: object
+                properties:
+                  customer_name:
+                    type: string
+                  borrow_total_money:
+                    type: string
+                  borrow_money:
+                    type: string
+                  due_date:
+                    type: string
+                    format: date
+                  borrowed_date:
+                    type: string
+                    format: date
+                  extra_a:
+                    type: string
+              caseid:
+                type: string
+    PostServiceCloudWorkflowUpdatedetailsResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            workflow_id:
+              type: string
+            count:
+              type: integer
+        status:
+          type: string
+        code:
+          type: integer
+    PostServiceCloudWorkflowUploaddetailsRequest:
+      type: object
+      properties:
+        workflow_id:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              variables:
+                type: object
+                properties:
+                  customer_name:
+                    type: string
+                  borrow_total_money:
+                    type: string
+                  borrowed_amount:
+                    type: string
+                  due_date:
+                    type: string
+                    format: date
+                  borrowed_date:
+                    type: string
+                    format: date
+              platform:
+                type: string
+              callee:
+                type: string
+              caseid:
+                type: string
+    PostServiceCloudWorkflowUploaddetailsResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            workflow_id:
+              type: string
+        status:
+          type: string
+        code:
+          type: integer
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+security:
+- apiKey: []
+tags:
+- name: Service

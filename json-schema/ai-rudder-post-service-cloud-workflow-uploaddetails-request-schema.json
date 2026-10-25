@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-rudder/main/json-schema/ai-rudder-post-service-cloud-workflow-uploaddetails-request-schema.json",
+  "title": "PostServiceCloudWorkflowUploaddetailsRequest",
+  "x-generated": "2026-10-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/ai-rudder-openapi-generated.yml#/components/schemas/PostServiceCloudWorkflowUploaddetailsRequest",
+  "type": "object",
+  "properties": {
+    "workflow_id": {
+      "type": "string"
+    },
+    "details": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "variables": {
+            "type": "object",
+            "properties": {
+              "customer_name": {
+                "type": "string"
+              },
+              "borrow_total_money": {
+                "type": "string"
+              },
+              "borrowed_amount": {
+                "type": "string"
+              },
+              "due_date": {
+                "type": "string",
+                "format": "date"
+              },
+              "borrowed_date": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          },
+          "platform": {
+            "type": "string"
+          },
+          "callee": {
+            "type": "string"
+          },
+          "caseid": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

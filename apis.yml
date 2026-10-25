@@ -1,25 +1,115 @@
 aid: ai-rudder
+
 name: AI Rudder
-description: 'AI Rudder is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by coatue) and added to the network as a stub for full-pipeline profiling.'
+
+description: AI Rudder provides AI-powered voice and chat agents, botlab, omnichannel solutions, and industry-specific AI services for banking,
+  insurance, logistics, and more. Their platform enables enterprises to deploy conversational AI for customer service, quality assurance, and
+  compliance, offering customizable agents and integration tools.
+
 url: https://raw.githubusercontent.com/api-evangelist/ai-rudder/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-25'
+
 modified: '2026-10-25'
+
 tags:
-- Company
-apis: []
+- AI
+- ConversationalAI
+- Enterprise
+- Automation
+- Platform
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- coatue
+
 common:
+- type: Spectral
+  url: rules/ai-rudder-rules.yml
+- type: JSONLD
+  url: json-ld/ai-rudder-context.jsonld
+- type: Vocabulary
+  url: vocabulary/ai-rudder-vocabulary.yml
+- type: DataModel
+  url: data-model/ai-rudder-data-model.yml
+- type: Authentication
+  url: authentication/ai-rudder-authentication.yml
+- type: Conformance
+  url: conformance/ai-rudder-conformance.yml
+- type: LLMsTxt
+  url: llms/ai-rudder-llms.txt
+- type: Hosts
+  url: hosts/ai-rudder-hosts.yml
+- type: Vendors
+  url: vendors/ai-rudder-vendors.yml
+- type: TermsOfService
+  url: https://airudder.com/terms-of-service/
+- type: PrivacyPolicy
+  url: https://airudder.com/privacy-policy/
+- type: Newsroom
+  url: https://airudder.com/news/voicegpt-launched-pioneering-ai-powered-customer-service/
+- type: DeveloperPortal
+  url: https://developer.airudder.com/
+- type: Blog
+  url: https://airudder.com/Blog
+- type: GettingStarted
+  url: https://api-docs.airudder.com/doc-1918333
+- type: Documentation
+  url: https://api-docs.airudder.com/
+- type: DomainSecurity
+  url: security/ai-rudder-domain-security.yml
 - type: Website
   url: https://airudder.com/
+
+apis:
+- aid: ai-rudder:ai-rudder-api
+  name: AI Rudder API
+  description: 'AI Rudder API as documented publicly: 19 operations. Contract generated from the documentation by API Evangelist (2026-10-25);
+    not the provider''s own document.'
+  humanURL: https://api-docs.airudder.com/api-44712004
+  baseURL: https://api.airudder.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/ai-rudder-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/ai-rudder-get-service-cloud-ic-detail-response-schema.json
+  - type: JSONSchema
+    url: json-schema/ai-rudder-get-service-cloud-workflow-instancelist-response-schema.json
+  - type: JSONSchema
+    url: json-schema/ai-rudder-post-service-cloud-workflow-updatedetails-request-schema.json
+  - type: JSONSchema
+    url: json-schema/ai-rudder-post-service-cloud-workflow-uploaddetails-request-schema.json
+  - type: JSONSchema
+    url: json-schema/ai-rudder-get-service-cloud-workflow-templatelist-response-schema.json
+  - type: JSONSchema
+    url: json-schema/ai-rudder-get-service-cloud-workflow-nodetasklist-response-schema.json
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: No public API documentation or machine-readable contract was found on ai-rudder.com.
+  evidence:
+  - url: https://ai-rudder.com/developers
+    status: 404
+  checked: '2026-10-25'
+
+x-backed-by:
+- coatue
+x-enrichment:
+  date: '2026-10-25'
+  status: enriched
+  artifacts_added: 22
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
