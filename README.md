@@ -64,5 +64,118 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-AI Rudder is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio; backed by coatue) and added to the network as a stub for full-pipeline profiling.
-- https://airudder.com/
+AI Rudder provides AI-powered voice and chat agents, botlab, omnichannel solutions, and industry-specific AI services for banking, insurance, logistics, and more. Their platform enables enterprises to deploy conversational AI for customer service, quality assurance, and compliance, offering customizable agents and integration tools.
+
+**Areas:** Artificial Intelligence · Conversational AI · Enterprise · Automation · Platform
+
+## AI Rudder on APIs.io
+
+Everything profiled for AI Rudder is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ai-rudder/](https://apis.io/providers/ai-rudder/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [AI Rudder API](https://apis.io/apis/ai-rudder/ai-rudder-api/) — AI Rudder API as documented publicly: 19 operations. Contract generated from the documentation by API Evangelist (2026-10-25); not the provider's own document.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### JSON Schema (6)
+
+The data models the API reads and writes.
+
+- [GetServiceCloudIcDetailResponse](https://apis.io/schemas/ai-rudder/ai-rudder-get-service-cloud-ic-detail-response/)
+- [GetServiceCloudWorkflowInstancelistResponse](https://apis.io/schemas/ai-rudder/ai-rudder-get-service-cloud-workflow-instancelist-response/)
+- [GetServiceCloudWorkflowNodetasklistResponse](https://apis.io/schemas/ai-rudder/ai-rudder-get-service-cloud-workflow-nodetasklist-response/)
+- [GetServiceCloudWorkflowTemplatelistResponse](https://apis.io/schemas/ai-rudder/ai-rudder-get-service-cloud-workflow-templatelist-response/)
+- [PostServiceCloudWorkflowUpdatedetailsRequest](https://apis.io/schemas/ai-rudder/ai-rudder-post-service-cloud-workflow-updatedetails-request/)
+- [PostServiceCloudWorkflowUploaddetailsRequest](https://apis.io/schemas/ai-rudder/ai-rudder-post-service-cloud-workflow-uploaddetails-request/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Ai Rudder Context](https://apis.io/jsonld/ai-rudder/ai-rudder-context/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [AI Rudder API Rules](https://apis.io/rules/ai-rudder/ai-rudder-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [AI Rudder Authentication](https://apis.io/security/ai-rudder/ai-rudder-authentication/)
+- [AI Rudder Domain Security](https://apis.io/security/ai-rudder/ai-rudder-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://airudder.com/)
+- [Documentation](https://api-docs.airudder.com/)
+- [Getting started](https://api-docs.airudder.com/doc-1918333)
+- [Blog](https://airudder.com/Blog)
+- [Terms of service](https://airudder.com/terms-of-service/)
+- [Privacy policy](https://airudder.com/privacy-policy/)
+
+## API Evangelist rating
+
+**Kin Score 31.4** — thin · rubric 0.28.1 · scored 2026-11-21
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 26.3 |
+| Contract governance | 19.7 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 45.2 |
+| Access clarity | 31.9 |
+
+**Agent readiness 17.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | yes |
+
+**Regulatory alignment 17.3** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ai-rudder/](https://apis.io/providers/ai-rudder/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for AI Rudder: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ai-rudder/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
